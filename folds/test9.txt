@@ -1,0 +1,6 @@
+/home/km942412/ChordRecognition/bach/001106b_annotated_events.xml
+/home/km942412/ChordRecognition/bach/002406bsannotated_events.xml
+/home/km942412/ChordRecognition/bach/014806b_annotated_events.xml
+/home/km942412/ChordRecognition/bach/001007b_annotated_events.xml
+/home/km942412/ChordRecognition/bach/003206b_annotated_events.xml
+/home/km942412/ChordRecognition/bach/014505bvannotated_events.xml
