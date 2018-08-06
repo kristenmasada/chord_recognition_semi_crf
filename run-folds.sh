@@ -16,14 +16,14 @@ CHORDSPATH=$4
 for fold in $(seq $STARTFOLD $ENDFOLD);
 do
 	echo $fold
-	nice $JAVA -Xmx250000m -classpath $CLASSPATH cr.CRMain -foldsPath $FOLDSPATH -foldNum $fold -simplify generic_added_notes -writeModelText -normalizeEnharmonics -countFeatures -useAllChords -useAllChordsPath $CHORDSPATH &> output-c-${fold}.txt
+	nice $JAVA -Xmx50000m -classpath $CLASSPATH cr.CRMain -foldsPath $FOLDSPATH -foldNum $fold -simplify generic_added_notes -writeModelText -normalizeEnharmonics -countFeatures -useAllChords -useAllChordsPath $CHORDSPATH &> output-c-${fold}.txt
 done
 
 # run folds
 for fold in $(seq $STARTFOLD $ENDFOLD);
 do
 	echo "started fold $fold"
-	nice $JAVA -Xmx250000m -classpath $CLASSPATH cr.CRMain -foldsPath $FOLDSPATH -foldNum $fold -simplify generic_added_notes -writeModelText -normalizeEnharmonics -useAllChords -useAllChordsPath $CHORDSPATH &> output-e-${fold}.txt &
+	nice $JAVA -Xmx50000m -classpath $CLASSPATH cr.CRMain -foldsPath $FOLDSPATH -foldNum $fold -simplify generic_added_notes -writeModelText -normalizeEnharmonics -useAllChords -useAllChordsPath $CHORDSPATH &> output-e-${fold}.txt &
 	echo "$fold % $NUMFOLDSPERIT" | bc
 	if [ `echo "$fold % $NUMFOLDSPERIT" | bc` -eq 0 ]
 	then

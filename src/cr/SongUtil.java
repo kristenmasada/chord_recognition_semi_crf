@@ -30,6 +30,8 @@ public class SongUtil {
 	public static List<String> enharmonicIDToMajChord = new ArrayList<>(Arrays.asList("A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"));
 	public static List<String> enharmonicIDToMinOrDimChord = new ArrayList<>(Arrays.asList("A", "Bb", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"));
 	public static List<String> enharmonicIDToAug6Chord = new ArrayList<>(Arrays.asList("A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"));
+	public static List<String> enharmonicIDToSus4 = new ArrayList<>(Arrays.asList("A", "Bb", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"));
+	public static List<String> enharmonicIDToSus2 = new ArrayList<>(Arrays.asList("A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"));
 	public static HashMap<String, Integer> enharmonicNotesToID = new HashMap<String, Integer>();
 	static {
 		enharmonicNotesToID.put("A", 0);
@@ -80,7 +82,7 @@ public class SongUtil {
 		BufferedReader br = new BufferedReader(isr);
 		
 		while(br.ready()) {
-			String chordLabel = br.readLine();
+			String chordLabel = br.readLine().trim();
 			SpanLabel.get(chordLabel);
 			WordLabel.get("B-" + chordLabel);
 			WordLabel.get("I-" + chordLabel);
@@ -136,7 +138,7 @@ public class SongUtil {
 				// predictions?
 				
 				// output song info
-//				System.out.println(song.toString());
+				System.out.println(song.title);
 				
 				// add song instance to result
 				result.add(song);
@@ -173,6 +175,16 @@ public class SongUtil {
 			else {
 				return label;
 			}
+		case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
+			pattern = "([BI]-)?[A-G][#b]?:(maj|7sus|dim|min|sus)(2|4|6|7)?(\\(\\*3\\))?";				// match added notes
+			r = Pattern.compile(pattern);													// create pattern object
+			m = r.matcher(label);															// simplify label
+			if(m.find()) {
+				return m.group(0);
+			}
+			else {
+				return label;
+			}
 		case ADDED_NOTES:
 			pattern = "([BI]-)?[A-G][#b]?:(7|minmaj|maj|min|dim|hdim|aug)(4|6|7)?";	// match added notes and
 																					// chord modes
@@ -192,7 +204,7 @@ public class SongUtil {
 	}
 	
 	public static String getMode(String parentLabel) {
-		String pattern = "(maj|min|dim|aug|ger|it|fr)";
+		String pattern = "(7sus4|sus4|sus2|maj\\(\\*3\\)|maj|min|dim|aug|ger|it|fr)";
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(parentLabel);
 		String mode = m.find() ? m.group(0) : "";
@@ -218,7 +230,7 @@ public class SongUtil {
 		String prefix = new String();
 		String root = new String();
 		String suffix = new String();
-		String pattern = "([BI]-)?(.*)(:(maj|min|dim|aug|ger|fr|it)(4|6|7)?)";
+		String pattern = "([BI]-)?(.*)(:(7sus|maj|min|dim|aug|ger|fr|it|sus)(2|4|6|7)?(\\(\\*3\\))?)";
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(label);
 		
@@ -233,10 +245,14 @@ public class SongUtil {
 		
 		switch(mode) {
 		case "maj":
+		case "sus2":
+		case "maj(*3)":
 			correctRoot = enharmonicIDToMajChord.get(enharmonicRootID);
 			break;
 		case "min":
 		case "dim":
+		case "sus4":
+		case "7sus4":
 			correctRoot = enharmonicIDToMinOrDimChord.get(enharmonicRootID);
 			break;
 		case "ger":

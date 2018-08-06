@@ -83,7 +83,7 @@ public class Song extends BaseInstance<Song, List<Event>, List<Span>> {
 			else {
 				song.input.add(Event.parseXML(events.get(i), song.input.get(i - 1)));
 			}
-			tag = events.get(i).getFirstChildElement("tag").getValue();
+			tag = events.get(i).getFirstChildElement("tag").getValue().trim();
 			song.outputTokenized.add(WordLabel.get(normalizeEnharmonicChords(simplifyLabel(tag, simplification), normalizeEnharmonics)));
 		}
 		

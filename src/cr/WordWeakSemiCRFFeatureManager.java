@@ -63,12 +63,18 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		FIFTH_COVERED(true),
 		ADDED_NOTE_COVERED(true),
 		ADDED_NOTE_NOT_COVERED(true),
+		SUS_OR_POW_ROOT_COVERED(false),
+		SUS_OR_POW_2ND_OR_4TH_COVERED(false),
+		SUS_OR_POW_5TH_COVERED(false),
+		DOM7SUS4_7TH_COVERED(false),
+		DOM7SUS4_7TH_NOT_COVERED(false),
 		AUG6_BASS_COVERED(false),
 		AUG6_3RD_COVERED(false),
 		AUG6_6TH_COVERED(false),
 		AUG6_5TH_COVERED(false),
 		ALL_NOTES_COVERED(true),
 		DURATION_ADDED_NOTE_GREATER_THAN_ROOT(true),
+		DURATION_7TH_OF_7SUS4_GREATER_THAN_ROOT(false),
 		DURATION_ROOT_COVERED(true),
 		FIG_DURATION_ROOT_COVERED(true),
 		SEGMENT_DURATION_ROOT_COVERED(true),
@@ -89,6 +95,26 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		SEGMENT_DURATION_ADDED_NOTE_COVERED(true),
 		ACCENT_ADDED_NOTE_COVERED(true),
 		FIG_ACCENT_ADDED_NOTE_COVERED(true),
+		DURATION_SUS_POW_ROOT_COVERED(false),
+		FIG_DURATION_SUS_POW_ROOT_COVERED(false),
+		SEGMENT_DURATION_SUS_POW_ROOT_COVERED(false),
+		DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED(false),
+		FIG_DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED(false),
+		SEGMENT_DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED(false),
+		DURATION_SUS_POW_FIFTH_COVERED(false),
+		FIG_DURATION_SUS_POW_FIFTH_COVERED(false),
+		SEGMENT_DURATION_SUS_POW_FIFTH_COVERED(false),
+		ACCENT_SUS_POW_ROOT_COVERED(false),
+		FIG_ACCENT_SUS_POW_ROOT_COVERED(false),
+		ACCENT_SUS_POW_SECOND_OR_FOURTH_COVERED(false),
+		FIG_ACCENT_SUS_POW_SECOND_OR_FOURTH_COVERED(false),
+		ACCENT_SUS_POW_FIFTH_COVERED(false),
+		FIG_ACCENT_SUS_POW_FIFTH_COVERED(false),
+		DURATION_SUS_POW_7SUS4_SEVENTH_COVERED(false),
+		FIG_DURATION_SUS_POW_7SUS4_SEVENTH_COVERED(false),
+		SEGMENT_DURATION_SUS_POW_7SUS4_SEVENTH_COVERED(false),
+		ACCENT_SUS_POW_7SUS4_SEVENTH_COVERED(false),
+		FIG_ACCENT_SUS_POW_7SUS4_SEVENTH_COVERED(false),
 		DURATION_AUG6_BASS_COVERED(false),
 		FIG_DURATION_AUG6_BASS_COVERED(false),
 		SEGMENT_DURATION_AUG6_BASS_COVERED(false),
@@ -114,6 +140,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		FIRST_BASS_IS_THIRD(true),
 		FIRST_BASS_IS_FIFTH(true),
 		FIRST_BASS_IS_ADDED_NOTE(true),
+		FIRST_BASS_IS_SUS_POW_ROOT(false),
+		FIRST_BASS_IS_SUS_POW_2ND_OR_4TH(false),
+		FIRST_BASS_IS_SUS_POW_5TH(false),
+		FIRST_BASS_IS_SUS_POW_7SUS4_7TH(false),
 		FIRST_BASS_IS_AUG6_BASS(false),
 		FIRST_BASS_IS_AUG6_3RD(false),
 		FIRST_BASS_IS_AUG6_6TH(false),
@@ -122,6 +152,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		FIG_FIRST_BASS_IS_THIRD(true),
 		FIG_FIRST_BASS_IS_FIFTH(true),
 		FIG_FIRST_BASS_IS_ADDED_NOTE(true),
+		FIG_FIRST_BASS_IS_SUS_POW_ROOT(false),
+		FIG_FIRST_BASS_IS_SUS_POW_2ND_OR_4TH(false),
+		FIG_FIRST_BASS_IS_SUS_POW_5TH(false),
+		FIG_FIRST_BASS_IS_SUS_POW_7SUS4_7TH(false),
 		FIG_FIRST_BASS_IS_AUG6_BASS(false),
 		FIG_FIRST_BASS_IS_AUG6_3RD(false),
 		FIG_FIRST_BASS_IS_AUG6_6TH(false),
@@ -130,6 +164,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		SEGMENT_BASS_IS_THIRD(true),
 		SEGMENT_BASS_IS_FIFTH(true),
 		SEGMENT_BASS_IS_ADDED_NOTE(true),
+		SEGMENT_BASS_IS_SUS_POW_ROOT(false),
+		SEGMENT_BASS_IS_SUS_POW_2ND_OR_4TH(false),
+		SEGMENT_BASS_IS_SUS_POW_5TH(false),
+		SEGMENT_BASS_IS_SUS_POW_7SUS4_7TH(false),
 		SEGMENT_BASS_IS_AUG6_BASS(false),
 		SEGMENT_BASS_IS_AUG6_3RD(false),
 		SEGMENT_BASS_IS_AUG6_6TH(false),
@@ -138,6 +176,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		FIG_SEGMENT_BASS_IS_THIRD(true),
 		FIG_SEGMENT_BASS_IS_FIFTH(true),
 		FIG_SEGMENT_BASS_IS_ADDED_NOTE(true),
+		FIG_SEGMENT_BASS_IS_SUS_POW_ROOT(false),
+		FIG_SEGMENT_BASS_IS_SUS_POW_2ND_OR_4TH(false),
+		FIG_SEGMENT_BASS_IS_SUS_POW_5TH(false),
+		FIG_SEGMENT_BASS_IS_SUS_POW_7SUS4_7TH(false),
 		FIG_SEGMENT_BASS_IS_AUG6_BASS(false),
 		FIG_SEGMENT_BASS_IS_AUG6_3RD(false),
 		FIG_SEGMENT_BASS_IS_AUG6_6TH(false),
@@ -146,6 +188,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		DURATION_BASS_IS_THIRD(true),
 		DURATION_BASS_IS_FIFTH(true),
 		DURATION_BASS_IS_ADDED_NOTE(true),
+		DURATION_SUS_POW_BASS_IS_ROOT(false),
+		DURATION_SUS_POW_BASS_IS_2ND_OR_4TH(false),
+		DURATION_SUS_POW_BASS_IS_5TH(false),
+		DURATION_SUS_POW_BASS_IS_7SUS4_7TH(false),
 		DURATION_BASS_IS_AUG6_BASS(false),
 		DURATION_BASS_IS_AUG6_3RD(false),
 		DURATION_BASS_IS_AUG6_6TH(false),
@@ -154,6 +200,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		ACCENT_BASS_IS_THIRD(true),
 		ACCENT_BASS_IS_FIFTH(true),
 		ACCENT_BASS_IS_ADDED_NOTE(true),
+		ACCENT_SUS_POW_BASS_IS_ROOT(false),
+		ACCENT_SUS_POW_BASS_IS_2ND_OR_4TH(false),
+		ACCENT_SUS_POW_BASS_IS_5TH(false),
+		ACCENT_SUS_POW_BASS_IS_7SUS4_7TH(false),		
 		ACCENT_BASS_IS_AUG6_BASS(false),
 		ACCENT_BASS_IS_AUG6_3RD(false),
 		ACCENT_BASS_IS_AUG6_6TH(false),
@@ -162,6 +212,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		FIG_DURATION_BASS_IS_THIRD(true),
 		FIG_DURATION_BASS_IS_FIFTH(true),
 		FIG_DURATION_BASS_IS_ADDED_NOTE(true),
+		FIG_DURATION_SUS_POW_BASS_IS_ROOT(false),
+		FIG_DURATION_SUS_POW_BASS_IS_2ND_OR_4TH(false),
+		FIG_DURATION_SUS_POW_BASS_IS_5TH(false),
+		FIG_DURATION_SUS_POW_BASS_IS_7SUS4_7TH(false),
 		FIG_DURATION_BASS_IS_AUG6_BASS(false),
 		FIG_DURATION_BASS_IS_AUG6_3RD(false),
 		FIG_DURATION_BASS_IS_AUG6_6TH(false),
@@ -170,6 +224,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		FIG_ACCENT_BASS_IS_THIRD(true),
 		FIG_ACCENT_BASS_IS_FIFTH(true),
 		FIG_ACCENT_BASS_IS_ADDED_NOTE(true),
+		FIG_ACCENT_SUS_POW_BASS_IS_ROOT(false),
+		FIG_ACCENT_SUS_POW_BASS_IS_2ND_OR_4TH(false),
+		FIG_ACCENT_SUS_POW_BASS_IS_5TH(false),
+		FIG_ACCENT_SUS_POW_BASS_IS_7SUS4_7TH(false),
 		FIG_ACCENT_BASS_IS_AUG6_BASS(false),
 		FIG_ACCENT_BASS_IS_AUG6_3RD(false),
 		FIG_ACCENT_BASS_IS_AUG6_6TH(false),
@@ -242,7 +300,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		/**
 		 * Print help message
 		 */
-		private static void printHelp(){
+		private static void printHelp() {
 			StringBuilder result = new StringBuilder();
 			result.append("Options:\n");
 			for(Argument argument: Argument.values()){
@@ -639,10 +697,17 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			// PURITY FEATURES
 			boolean is_aug6_chord = isAug6Chord(parentLabel);
 			boolean is_fr_or_ger_chord = isFrOrGerChord(parentLabel);
+			boolean is_sus_or_pow_chord = isSusOrPowChord(parentLabel);
+			boolean is_sus_chord = isSusChord(parentLabel);
+			boolean is_pow_chord = isPowChord(parentLabel);
+			boolean is_7sus4_chord = mode.equals("7sus4");
+			boolean is_reg_chord = !is_aug6_chord && !is_sus_or_pow_chord;
+			
 			int interval1 = 0;
-			boolean root_covered = is_aug6_chord ? false : coverage(interval1, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord);
+			boolean root_covered = (is_aug6_chord || is_sus_or_pow_chord) ? false : coverage(interval1, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord);
 			if(FeatureType.ROOT_COVERED.enabled()) {
 				if(root_covered) {	
 					String rootCoveredFeatureName = FeatureType.ROOT_COVERED.name();
@@ -663,7 +728,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			int interval2 = 1;
-			boolean third_covered = is_aug6_chord ? false : coverage(interval2, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord);
+			boolean third_covered = (is_aug6_chord || is_sus_or_pow_chord) ? false : coverage(interval2, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord);
 			if(FeatureType.THIRD_COVERED.enabled()) {
 				if(third_covered) {		
 					String thirdCoveredFeatureName = FeatureType.THIRD_COVERED.name();
@@ -684,7 +749,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			int interval3 = 2;
-			boolean fifth_covered = is_aug6_chord ? false : coverage(interval3, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord);
+			boolean fifth_covered = (is_aug6_chord || is_sus_or_pow_chord) ? false : coverage(interval3, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord);
 			if(FeatureType.FIFTH_COVERED.enabled()) {
 				if(fifth_covered) {
 					String fifthCoveredFeatureName = FeatureType.FIFTH_COVERED.name();
@@ -705,10 +770,8 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			int interval4 = 3;
-			boolean added_note_covered = is_aug6_chord ? false : coverage(interval4, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord);
+			boolean added_note_covered = (is_aug6_chord || is_sus_or_pow_chord) ? false : coverage(interval4, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord);
 			if(FeatureType.ADDED_NOTE_COVERED.enabled()) {
-//				System.out.println("[" + (childPos) + ", " + childType.toString() + ", " + (childLabelId) + "]");
-//				System.out.println("[" + (parentPos) + ", " + parentType.toString() + ", " + (parentLabelId) + "]");
 				if(added_note_covered) {
 					String addedNoteCoveredFeatureName = FeatureType.ADDED_NOTE_COVERED.name();
 					if(countFeatures) {
@@ -729,13 +792,6 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.ADDED_NOTE_NOT_COVERED.enabled()) {
 				if(!addedNote.isEmpty() && !added_note_covered) {
-//					System.out.println("");
-//					System.out.println("Measure: " + eventsInside.get(0).measureNumber);
-//					System.out.println("Parent label: " + parentLabel);
-//					System.out.println("Segment bounds: " + beginningSegmentIndex + ", " + endSegmentIndex);
-//					System.out.println("[" + childPos + ", " + childType.toString() + ", " + (childLabelId) + "]");
-//					System.out.println("[" + parentPos + ", " + parentType.toString() + ", " + (parentLabelId) + "]");
-//					System.out.println("Added note not covered.");
 					String addedNoteNotCoveredFeatureName = FeatureType.ADDED_NOTE_NOT_COVERED.name();
 					if(countFeatures) {
 						int addedNoteNotCoveredFeature = param_g.toFeature(FeatureType.ADDED_NOTE_NOT_COVERED.name(), "", "");
@@ -753,7 +809,107 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
-			boolean aug6_bass_covered = is_aug6_chord ? coverage(interval1, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord) : false;
+			boolean sus_or_pow_root_covered = is_sus_or_pow_chord ? coverage(interval1, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
+			if(FeatureType.SUS_OR_POW_ROOT_COVERED.enabled()) {
+				if(sus_or_pow_root_covered) {
+					String susOrPowRootCoveredFeatureName = FeatureType.SUS_OR_POW_ROOT_COVERED.name();
+					if(countFeatures) {
+						int susOrPowRootCoveredFeature = param_g.toFeature(susOrPowRootCoveredFeatureName, "", "");
+						featureIDToName.set(susOrPowRootCoveredFeature, susOrPowRootCoveredFeatureName);
+						segmentFeatures.add(susOrPowRootCoveredFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(susOrPowRootCoveredFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int susOrPowRootCoveredFeature = param_g.toFeature(susOrPowRootCoveredFeatureName, "", "");
+//							System.out.println(susOrPowRootCoveredFeatureName);
+							segmentFeatures.add(susOrPowRootCoveredFeature);
+						}
+					}
+				}
+			}
+			
+			boolean sus_or_pow_2nd_or_4th_covered = is_sus_chord ? coverage(interval2, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
+			if(FeatureType.SUS_OR_POW_2ND_OR_4TH_COVERED.enabled()) {
+				if(sus_or_pow_2nd_or_4th_covered) {
+					String susOrPow2ndOr4thCoveredFeatureName = FeatureType.SUS_OR_POW_2ND_OR_4TH_COVERED.name();
+					if(countFeatures) {
+						int susOrPow2ndOr4thCoveredFeature = param_g.toFeature(susOrPow2ndOr4thCoveredFeatureName, "", "");
+						featureIDToName.set(susOrPow2ndOr4thCoveredFeature, susOrPow2ndOr4thCoveredFeatureName);
+						segmentFeatures.add(susOrPow2ndOr4thCoveredFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(susOrPow2ndOr4thCoveredFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int susOrPow2ndOr4thCoveredFeature = param_g.toFeature(susOrPow2ndOr4thCoveredFeatureName, "", "");
+//							System.out.println(susOrPow2ndOr4thCoveredFeatureName);
+							segmentFeatures.add(susOrPow2ndOr4thCoveredFeature);
+						}
+					}
+				}
+			}
+			
+			boolean sus_or_pow_5th_covered = is_sus_or_pow_chord ? coverage(interval3, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
+			if(FeatureType.SUS_OR_POW_5TH_COVERED.enabled()) {
+				if(sus_or_pow_5th_covered) {
+					String susOrPow5thCoveredFeatureName = FeatureType.SUS_OR_POW_5TH_COVERED.name();
+					if(countFeatures) {
+						int susOrPow5thCoveredFeature = param_g.toFeature(susOrPow5thCoveredFeatureName, "", "");
+						featureIDToName.set(susOrPow5thCoveredFeature, susOrPow5thCoveredFeatureName);
+						segmentFeatures.add(susOrPow5thCoveredFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(susOrPow5thCoveredFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int susOrPow5thCoveredFeature = param_g.toFeature(susOrPow5thCoveredFeatureName, "", "");
+//							System.out.println(susOrPow5thCoveredFeatureName);
+							segmentFeatures.add(susOrPow5thCoveredFeature);
+						}
+					}
+				}
+			}
+			
+			boolean dom7sus4_7th_covered = is_7sus4_chord ? coverage(interval4, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
+			if(FeatureType.DOM7SUS4_7TH_COVERED.enabled()) {
+				if(dom7sus4_7th_covered) {
+//					System.out.println("7th of 7sus4 covered.");
+					String dom7sus4_7thCoveredFeatureName = FeatureType.DOM7SUS4_7TH_COVERED.name();
+					if(countFeatures) {
+						int dom7sus4_7thCoveredFeature = param_g.toFeature(dom7sus4_7thCoveredFeatureName, "", "");
+						featureIDToName.set(dom7sus4_7thCoveredFeature, dom7sus4_7thCoveredFeatureName);
+						segmentFeatures.add(dom7sus4_7thCoveredFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(dom7sus4_7thCoveredFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int dom7sus4_7thCoveredFeature = param_g.toFeature(dom7sus4_7thCoveredFeatureName, "", "");
+//							System.out.println(dom7sus4_7thCoveredFeatureName);
+							segmentFeatures.add(dom7sus4_7thCoveredFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.DOM7SUS4_7TH_NOT_COVERED.enabled()) {
+				if(is_7sus4_chord && !dom7sus4_7th_covered) {
+					String dom7sus4_7thNotCoveredFeatureName = FeatureType.DOM7SUS4_7TH_NOT_COVERED.name();
+					if(countFeatures) {
+						int dom7sus4_7thNotCoveredFeature = param_g.toFeature(dom7sus4_7thNotCoveredFeatureName, "", "");
+						featureIDToName.set(dom7sus4_7thNotCoveredFeature, dom7sus4_7thNotCoveredFeatureName);
+						segmentFeatures.add(dom7sus4_7thNotCoveredFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(dom7sus4_7thNotCoveredFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int dom7sus4_7thNotCoveredFeature = param_g.toFeature(dom7sus4_7thNotCoveredFeatureName, "", "");
+//							System.out.println(dom7sus4_7thNotCoveredFeatureName);
+							segmentFeatures.add(dom7sus4_7thNotCoveredFeature);
+						}
+					}
+				}
+			}
+			
+			boolean aug6_bass_covered = is_aug6_chord ? coverage(interval1, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
 			if(FeatureType.AUG6_BASS_COVERED.enabled()) {
 				if(aug6_bass_covered) {
 					String aug6BassCoveredFeatureName = FeatureType.AUG6_BASS_COVERED.name();
@@ -773,7 +929,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
-			boolean aug6_3rd_covered = is_aug6_chord ? coverage(interval2, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord) : false;
+			boolean aug6_3rd_covered = is_aug6_chord ? coverage(interval2, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
 			if(FeatureType.AUG6_3RD_COVERED.enabled()) {
 				if(aug6_3rd_covered) {
 					String aug6_3rdCoveredFeatureName = FeatureType.AUG6_3RD_COVERED.name();
@@ -793,7 +949,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
-			boolean aug6_6th_covered = is_aug6_chord ? coverage(interval3, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord) : false;
+			boolean aug6_6th_covered = is_aug6_chord ? coverage(interval3, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
 			if(FeatureType.AUG6_6TH_COVERED.enabled()) {
 				if(aug6_6th_covered) {
 					String aug6_6thCoveredFeatureName = FeatureType.AUG6_6TH_COVERED.name();
@@ -813,7 +969,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
-			boolean aug6_5th_covered = is_fr_or_ger_chord ? coverage(interval4, addedNote, parentNotes, segmentNotes, parentLabel, is_fr_or_ger_chord) : false;
+			boolean aug6_5th_covered = is_fr_or_ger_chord ? coverage(interval4, addedNote, parentNotes, segmentNotes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord) : false;
 			if(FeatureType.AUG6_5TH_COVERED.enabled()) {
 				if(aug6_5th_covered) {
 					String aug6_5thCoveredFeatureName = FeatureType.AUG6_5TH_COVERED.name();
@@ -836,21 +992,26 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			if(FeatureType.ALL_NOTES_COVERED.enabled()) {
 				boolean triad_covered = addedNote.isEmpty() && root_covered && third_covered && fifth_covered;
 				boolean added_note_chord_covered = !addedNote.isEmpty() && root_covered && third_covered && fifth_covered && added_note_covered;
+				boolean pow_covered = is_pow_chord && sus_or_pow_root_covered && sus_or_pow_5th_covered;
+				boolean sus2_or_sus4_covered = !is_7sus4_chord && sus_or_pow_root_covered && sus_or_pow_2nd_or_4th_covered && sus_or_pow_5th_covered;
+				boolean dom7sus4_covered = sus_or_pow_root_covered && sus_or_pow_2nd_or_4th_covered && sus_or_pow_5th_covered && dom7sus4_7th_covered;
 				boolean aug6_covered = aug6_bass_covered && aug6_3rd_covered && aug6_6th_covered;
 				if(is_fr_or_ger_chord && !aug6_5th_covered) {
 					aug6_covered = false;
 				}
-				if(triad_covered || added_note_chord_covered || aug6_covered) {
+				boolean all_notes_covered = (triad_covered || added_note_chord_covered || aug6_covered || pow_covered || sus2_or_sus4_covered || dom7sus4_covered);
+				
+				if(all_notes_covered) {
 					String allNotesCoveredFeatureName = FeatureType.ALL_NOTES_COVERED.name();
 					if(countFeatures) {
-						int allNotesCoveredFeature = param_g.toFeature(FeatureType.ALL_NOTES_COVERED.name(), "", "");
+						int allNotesCoveredFeature = param_g.toFeature(allNotesCoveredFeatureName, "", "");
 						featureIDToName.set(allNotesCoveredFeature, allNotesCoveredFeatureName);
 						segmentFeatures.add(allNotesCoveredFeature);
 					}
 					else {
 						Integer count = featureNameToID.get(allNotesCoveredFeatureName);
 						if((count != null) && (count > MIN_FEATURE_COUNT)) {
-							int allNotesCoveredFeature = param_g.toFeature(FeatureType.ALL_NOTES_COVERED.name(), "", "");
+							int allNotesCoveredFeature = param_g.toFeature(allNotesCoveredFeatureName, "", "");
 							segmentFeatures.add(allNotesCoveredFeature);
 						}
 					}
@@ -858,28 +1019,49 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.DURATION_ADDED_NOTE_GREATER_THAN_ROOT.enabled()) {
-				if(!is_aug6_chord && !addedNote.isEmpty() && durationAddedNoteGreaterThanRoot(parentNotes, segmentNotes)) {
+				if(!is_aug6_chord && !is_sus_or_pow_chord && !addedNote.isEmpty() && durationAddedNoteGreaterThanRoot(parentNotes, segmentNotes)) {
+//					System.out.println("Duration added note greater than root");
 					String durationAddedNoteGreaterThanRootFeatureName = FeatureType.DURATION_ADDED_NOTE_GREATER_THAN_ROOT.name();
 					if(countFeatures) {
-						int durationAddedNoteGreaterThanRootFeature = param_g.toFeature(FeatureType.DURATION_ADDED_NOTE_GREATER_THAN_ROOT.name(), "", "");
+						int durationAddedNoteGreaterThanRootFeature = param_g.toFeature(durationAddedNoteGreaterThanRootFeatureName, "", "");
 						featureIDToName.set(durationAddedNoteGreaterThanRootFeature, durationAddedNoteGreaterThanRootFeatureName);
 						segmentFeatures.add(durationAddedNoteGreaterThanRootFeature);
 					}
 					else {
 						Integer count = featureNameToID.get(durationAddedNoteGreaterThanRootFeatureName);
 						if((count != null) && (count > MIN_FEATURE_COUNT)) {
-							int durationAddedNoteGreaterThanRootFeature = param_g.toFeature(FeatureType.DURATION_ADDED_NOTE_GREATER_THAN_ROOT.name(), "", "");
+							int durationAddedNoteGreaterThanRootFeature = param_g.toFeature(durationAddedNoteGreaterThanRootFeatureName, "", "");
 							segmentFeatures.add(durationAddedNoteGreaterThanRootFeature);
 						}
 					}
 				}
 			}
 			
+			if(FeatureType.DURATION_7TH_OF_7SUS4_GREATER_THAN_ROOT.enabled()) {
+				if(is_7sus4_chord && durationAddedNoteGreaterThanRoot(parentNotes, segmentNotes)) {
+//					System.out.println("Duration 7th of 7sus4 greater than root");
+					String duration7thOf7sus4GreaterThanRootFeatureName = FeatureType.DURATION_7TH_OF_7SUS4_GREATER_THAN_ROOT.name();
+					if(countFeatures) {
+						int duration7thOf7sus4GreaterThanRootFeature = param_g.toFeature(duration7thOf7sus4GreaterThanRootFeatureName, "", "");
+						featureIDToName.set(duration7thOf7sus4GreaterThanRootFeature, duration7thOf7sus4GreaterThanRootFeatureName);
+						segmentFeatures.add(duration7thOf7sus4GreaterThanRootFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(duration7thOf7sus4GreaterThanRootFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int durationAddedNoteGreaterThanRootFeature = param_g.toFeature(duration7thOf7sus4GreaterThanRootFeatureName, "", "");
+							segmentFeatures.add(durationAddedNoteGreaterThanRootFeature);
+						}
+					}
+				}
+			}
+			
+			
 			if(FeatureType.DURATION_ROOT_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -911,10 +1093,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_DURATION_ROOT_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -946,10 +1128,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.SEGMENT_DURATION_ROOT_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
 					
@@ -981,10 +1163,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.DURATION_THIRD_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
@@ -1017,10 +1199,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_DURATION_THIRD_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
@@ -1053,10 +1235,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.SEGMENT_DURATION_THIRD_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
 					
@@ -1088,10 +1270,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.DURATION_FIFTH_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1123,10 +1305,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_DURATION_FIFTH_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1158,10 +1340,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.SEGMENT_DURATION_FIFTH_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
 					
@@ -1193,10 +1375,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_ROOT_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1228,10 +1410,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_ROOT_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1263,10 +1445,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_THIRD_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1298,10 +1480,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_THIRD_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1333,10 +1515,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_FIFTH_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1368,10 +1550,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_FIFTH_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1403,10 +1585,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.DURATION_ADDED_NOTE_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1438,10 +1620,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_DURATION_ADDED_NOTE_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1473,10 +1655,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.SEGMENT_DURATION_ADDED_NOTE_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
 					
@@ -1508,10 +1690,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_ADDED_NOTE_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1543,10 +1725,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_ADDED_NOTE_COVERED.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -1577,11 +1759,732 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			if(FeatureType.DURATION_SUS_POW_ROOT_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String durationSusPowRootCoveredFeatureNameGeneric = FeatureType.DURATION_SUS_POW_ROOT_COVERED.name();
+						String durationSusPowRootCoveredFeatureName = durationSusPowRootCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int durationSusPowRootCoveredFeature = param_g.toFeature(durationSusPowRootCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(durationSusPowRootCoveredFeature, durationSusPowRootCoveredFeatureName);
+							segmentFeatures.add(durationSusPowRootCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPowRootCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPowRootCoveredFeature = param_g.toFeature(durationSusPowRootCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(durationSusPowRootCoveredFeatureName);
+								segmentFeatures.add(durationSusPowRootCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_ROOT_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String figDurationSusPowRootCoveredFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_ROOT_COVERED.name();
+						String figDurationSusPowRootCoveredFeatureName = figDurationSusPowRootCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int figDurationSusPowRootCoveredFeature = param_g.toFeature(figDurationSusPowRootCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(figDurationSusPowRootCoveredFeature, figDurationSusPowRootCoveredFeatureName);
+							segmentFeatures.add(figDurationSusPowRootCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPowRootCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPowRootCoveredFeature = param_g.toFeature(figDurationSusPowRootCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(figDurationSusPowRootCoveredFeatureName);
+								segmentFeatures.add(figDurationSusPowRootCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.SEGMENT_DURATION_SUS_POW_ROOT_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("DURATION");
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(segmentDurationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(segmentDurationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String segmentDurationSusPowRootCoveredFeatureNameGeneric = FeatureType.SEGMENT_DURATION_SUS_POW_ROOT_COVERED.name();
+						String segmentDurationSusPowRootCoveredFeatureName = segmentDurationSusPowRootCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int segmentDurationSusPowRootCoveredFeature = param_g.toFeature(segmentDurationSusPowRootCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(segmentDurationSusPowRootCoveredFeature, segmentDurationSusPowRootCoveredFeatureName);
+							segmentFeatures.add(segmentDurationSusPowRootCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(segmentDurationSusPowRootCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int segmentDurationSusPowRootCoveredFeature = param_g.toFeature(segmentDurationSusPowRootCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(segmentDurationSusPowRootCoveredFeatureName);
+								segmentFeatures.add(segmentDurationSusPowRootCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String durationSusPowSecondOrFourthCoveredFeatureNameGeneric = FeatureType.DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED.name();
+						String durationSusPowSecondOrFourthCoveredFeatureName = durationSusPowSecondOrFourthCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int durationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(durationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(durationSusPowSecondOrFourthCoveredFeature, durationSusPowSecondOrFourthCoveredFeatureName);
+							segmentFeatures.add(durationSusPowSecondOrFourthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPowSecondOrFourthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(durationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(durationSusPowSecondOrFourthCoveredFeatureName);
+								segmentFeatures.add(durationSusPowSecondOrFourthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String figDurationSusPowSecondOrFourthCoveredFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED.name();
+						String figDurationSusPowSecondOrFourthCoveredFeatureName = figDurationSusPowSecondOrFourthCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int figDurationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(figDurationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(figDurationSusPowSecondOrFourthCoveredFeature, figDurationSusPowSecondOrFourthCoveredFeatureName);
+							segmentFeatures.add(figDurationSusPowSecondOrFourthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPowSecondOrFourthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(figDurationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(figDurationSusPowSecondOrFourthCoveredFeatureName);
+								segmentFeatures.add(figDurationSusPowSecondOrFourthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.SEGMENT_DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("DURATION");
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(segmentDurationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(segmentDurationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric = FeatureType.SEGMENT_DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED.name();
+						String segmentDurationSusPowSecondOrFourthCoveredFeatureName = segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int segmentDurationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(segmentDurationSusPowSecondOrFourthCoveredFeature, segmentDurationSusPowSecondOrFourthCoveredFeatureName);
+							segmentFeatures.add(segmentDurationSusPowSecondOrFourthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(segmentDurationSusPowSecondOrFourthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int segmentDurationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(segmentDurationSusPowSecondOrFourthCoveredFeatureName);
+								segmentFeatures.add(segmentDurationSusPowSecondOrFourthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.DURATION_SUS_POW_FIFTH_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String durationSusPowFifthCoveredFeatureNameGeneric = FeatureType.DURATION_SUS_POW_FIFTH_COVERED.name();
+						String durationSusPowFifthCoveredFeatureName = durationSusPowFifthCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int durationSusPowFifthCoveredFeature = param_g.toFeature(durationSusPowFifthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(durationSusPowFifthCoveredFeature, durationSusPowFifthCoveredFeatureName);
+							segmentFeatures.add(durationSusPowFifthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPowFifthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPowFifthCoveredFeature = param_g.toFeature(durationSusPowFifthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(durationSusPowFifthCoveredFeatureName);
+								segmentFeatures.add(durationSusPowFifthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_FIFTH_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String figDurationSusPowFifthCoveredFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_FIFTH_COVERED.name();
+						String figDurationSusPowFifthCoveredFeatureName = figDurationSusPowFifthCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int figDurationSusPowFifthCoveredFeature = param_g.toFeature(figDurationSusPowFifthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(figDurationSusPowFifthCoveredFeature, figDurationSusPowFifthCoveredFeatureName);
+							segmentFeatures.add(figDurationSusPowFifthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPowFifthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPowFifthCoveredFeature = param_g.toFeature(figDurationSusPowFifthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(figDurationSusPowFifthCoveredFeatureName);
+								segmentFeatures.add(figDurationSusPowFifthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.SEGMENT_DURATION_SUS_POW_FIFTH_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("DURATION");
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(segmentDurationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(segmentDurationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String segmentDurationSusPowFifthCoveredFeatureNameGeneric = FeatureType.SEGMENT_DURATION_SUS_POW_FIFTH_COVERED.name();
+						String segmentDurationSusPowFifthCoveredFeatureName = segmentDurationSusPowFifthCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int segmentDurationSusPowFifthCoveredFeature = param_g.toFeature(segmentDurationSusPowFifthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(segmentDurationSusPowFifthCoveredFeature, segmentDurationSusPowFifthCoveredFeatureName);
+							segmentFeatures.add(segmentDurationSusPowFifthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(segmentDurationSusPowFifthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int segmentDurationSusPowFifthCoveredFeature = param_g.toFeature(segmentDurationSusPowFifthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(segmentDurationSusPowFifthCoveredFeatureName);
+								segmentFeatures.add(segmentDurationSusPowFifthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.ACCENT_SUS_POW_ROOT_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
+					overlappedAccentValues.add(accentValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(accentValue > bin) {
+								overlappedAccentValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedAccentValue : overlappedAccentValues) {
+						String accentSusPowRootCoveredFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_ROOT_COVERED.name();
+						String accentSusPowRootCoveredFeatureName = accentSusPowRootCoveredFeatureNameGeneric + "_" + overlappedAccentValue;
+						if(countFeatures) {
+							int accentSusPowRootCoveredFeature = param_g.toFeature(accentSusPowRootCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+							featureIDToName.set(accentSusPowRootCoveredFeature, accentSusPowRootCoveredFeatureName);
+							segmentFeatures.add(accentSusPowRootCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPowRootCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPowRootCoveredFeature = param_g.toFeature(accentSusPowRootCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+		//						System.out.println(accentSusPowRootCoveredFeatureName);
+								segmentFeatures.add(accentSusPowRootCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_ROOT_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
+					overlappedAccentValues.add(accentValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(accentValue > bin) {
+								overlappedAccentValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedAccentValue : overlappedAccentValues) {
+						String figAccentSusPowRootCoveredFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_ROOT_COVERED.name();
+						String figAccentSusPowRootCoveredFeatureName = figAccentSusPowRootCoveredFeatureNameGeneric + "_" + overlappedAccentValue;
+						if(countFeatures) {
+							int figAccentSusPowRootCoveredFeature = param_g.toFeature(figAccentSusPowRootCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+							featureIDToName.set(figAccentSusPowRootCoveredFeature, figAccentSusPowRootCoveredFeatureName);
+							segmentFeatures.add(figAccentSusPowRootCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPowRootCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPowRootCoveredFeature = param_g.toFeature(figAccentSusPowRootCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+		//						System.out.println(figAccentSusPowRootCoveredFeatureName);
+								segmentFeatures.add(figAccentSusPowRootCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.ACCENT_SUS_POW_SECOND_OR_FOURTH_COVERED.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
+					overlappedAccentValues.add(accentValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(accentValue > bin) {
+								overlappedAccentValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedAccentValue : overlappedAccentValues) {
+						String accentSusPowSecondOrFourthCoveredFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_SECOND_OR_FOURTH_COVERED.name();
+						String accentSusPowSecondOrFourthCoveredFeatureName = accentSusPowSecondOrFourthCoveredFeatureNameGeneric + "_" + overlappedAccentValue;
+						if(countFeatures) {
+							int accentSusPowSecondOrFourthCoveredFeature = param_g.toFeature(accentSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+							featureIDToName.set(accentSusPowSecondOrFourthCoveredFeature, accentSusPowSecondOrFourthCoveredFeatureName);
+							segmentFeatures.add(accentSusPowSecondOrFourthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPowSecondOrFourthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPowSecondOrFourthCoveredFeature = param_g.toFeature(accentSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+		//						System.out.println(accentSusPowSecondOrFourthCoveredFeatureName);
+								segmentFeatures.add(accentSusPowSecondOrFourthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_SECOND_OR_FOURTH_COVERED.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
+					overlappedAccentValues.add(accentValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(accentValue > bin) {
+								overlappedAccentValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedAccentValue : overlappedAccentValues) {
+						String figAccentSusPowSecondOrFourthCoveredFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_SECOND_OR_FOURTH_COVERED.name();
+						String figAccentSusPowSecondOrFourthCoveredFeatureName = figAccentSusPowSecondOrFourthCoveredFeatureNameGeneric + "_" + overlappedAccentValue;
+						if(countFeatures) {
+							int figAccentSusPowSecondOrFourthCoveredFeature = param_g.toFeature(figAccentSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+							featureIDToName.set(figAccentSusPowSecondOrFourthCoveredFeature, figAccentSusPowSecondOrFourthCoveredFeatureName);
+							segmentFeatures.add(figAccentSusPowSecondOrFourthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPowSecondOrFourthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPowSecondOrFourthCoveredFeature = param_g.toFeature(figAccentSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+		//						System.out.println(figAccentSusPowSecondOrFourthCoveredFeatureName);
+								segmentFeatures.add(figAccentSusPowSecondOrFourthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.ACCENT_SUS_POW_FIFTH_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
+					overlappedAccentValues.add(accentValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(accentValue > bin) {
+								overlappedAccentValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedAccentValue : overlappedAccentValues) {
+						String accentSusPowFifthCoveredFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_FIFTH_COVERED.name();
+						String accentSusPowFifthCoveredFeatureName = accentSusPowFifthCoveredFeatureNameGeneric + "_" + overlappedAccentValue;
+						if(countFeatures) {
+							int accentSusPowFifthCoveredFeature = param_g.toFeature(accentSusPowFifthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+							featureIDToName.set(accentSusPowFifthCoveredFeature, accentSusPowFifthCoveredFeatureName);
+							segmentFeatures.add(accentSusPowFifthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPowFifthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPowFifthCoveredFeature = param_g.toFeature(accentSusPowFifthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+		//						System.out.println(accentSusPowFifthCoveredFeatureName);
+								segmentFeatures.add(accentSusPowFifthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_FIFTH_COVERED.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
+					overlappedAccentValues.add(accentValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(accentValue > bin) {
+								overlappedAccentValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedAccentValue : overlappedAccentValues) {
+						String figAccentSusPowFifthCoveredFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_FIFTH_COVERED.name();
+						String figAccentSusPowFifthCoveredFeatureName = figAccentSusPowFifthCoveredFeatureNameGeneric + "_" + overlappedAccentValue;
+						if(countFeatures) {
+							int figAccentSusPowFifthCoveredFeature = param_g.toFeature(figAccentSusPowFifthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+							featureIDToName.set(figAccentSusPowFifthCoveredFeature, figAccentSusPowFifthCoveredFeatureName);
+							segmentFeatures.add(figAccentSusPowFifthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPowFifthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPowFifthCoveredFeature = param_g.toFeature(figAccentSusPowFifthCoveredFeatureNameGeneric, "", overlappedAccentValue + "");
+		//						System.out.println(figAccentSusPowFifthCoveredFeatureName);
+								segmentFeatures.add(figAccentSusPowFifthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.DURATION_SUS_POW_7SUS4_SEVENTH_COVERED.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String durationSusPow7Sus4SeventhCoveredFeatureNameGeneric = FeatureType.DURATION_SUS_POW_7SUS4_SEVENTH_COVERED.name();
+						String durationSusPow7Sus4SeventhCoveredFeatureName = durationSusPow7Sus4SeventhCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int durationSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(durationSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(durationSusPow7Sus4SeventhCoveredFeature, durationSusPow7Sus4SeventhCoveredFeatureName);
+							segmentFeatures.add(durationSusPow7Sus4SeventhCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPow7Sus4SeventhCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(durationSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(durationSusPow7Sus4SeventhCoveredFeatureName);
+								segmentFeatures.add(durationSusPow7Sus4SeventhCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_7SUS4_SEVENTH_COVERED.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("DURATION");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String figDurationSusPow7Sus4SeventhCoveredFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_7SUS4_SEVENTH_COVERED.name();
+						String figDurationSusPow7Sus4SeventhCoveredFeatureName = figDurationSusPow7Sus4SeventhCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int figDurationSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(figDurationSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(figDurationSusPow7Sus4SeventhCoveredFeature, figDurationSusPow7Sus4SeventhCoveredFeatureName);
+							segmentFeatures.add(figDurationSusPow7Sus4SeventhCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPow7Sus4SeventhCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(figDurationSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(figDurationSusPow7Sus4SeventhCoveredFeatureName);
+								segmentFeatures.add(figDurationSusPow7Sus4SeventhCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.SEGMENT_DURATION_SUS_POW_7SUS4_SEVENTH_COVERED.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("DURATION");
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(segmentDurationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(segmentDurationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric = FeatureType.SEGMENT_DURATION_SUS_POW_SECOND_OR_FOURTH_COVERED.name();
+						String segmentDurationSusPowSecondOrFourthCoveredFeatureName = segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int segmentDurationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(segmentDurationSusPowSecondOrFourthCoveredFeature, segmentDurationSusPowSecondOrFourthCoveredFeatureName);
+							segmentFeatures.add(segmentDurationSusPowSecondOrFourthCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(segmentDurationSusPowSecondOrFourthCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int segmentDurationSusPowSecondOrFourthCoveredFeature = param_g.toFeature(segmentDurationSusPowSecondOrFourthCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(segmentDurationSusPowSecondOrFourthCoveredFeatureName);
+								segmentFeatures.add(segmentDurationSusPowSecondOrFourthCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.ACCENT_SUS_POW_7SUS4_SEVENTH_COVERED.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String accentSusPow7Sus4SeventhCoveredFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_7SUS4_SEVENTH_COVERED.name();
+						String accentSusPow7Sus4SeventhCoveredFeatureName = accentSusPow7Sus4SeventhCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int accentSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(accentSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(accentSusPow7Sus4SeventhCoveredFeature, accentSusPow7Sus4SeventhCoveredFeatureName);
+							segmentFeatures.add(accentSusPow7Sus4SeventhCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPow7Sus4SeventhCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(accentSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(accentSusPow7Sus4SeventhCoveredFeatureName);
+								segmentFeatures.add(accentSusPow7Sus4SeventhCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_7SUS4_SEVENTH_COVERED.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
+					overlappedDurationValues.add(durationValue);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(durationValue > bin) {
+								overlappedDurationValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedDurationValue : overlappedDurationValues) {
+						String figAccentSusPow7Sus4SeventhCoveredFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_7SUS4_SEVENTH_COVERED.name();
+						String figAccentSusPow7Sus4SeventhCoveredFeatureName = figAccentSusPow7Sus4SeventhCoveredFeatureNameGeneric + "_" + overlappedDurationValue;
+						if(countFeatures) {
+							int figAccentSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(figAccentSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+							featureIDToName.set(figAccentSusPow7Sus4SeventhCoveredFeature, figAccentSusPow7Sus4SeventhCoveredFeatureName);
+							segmentFeatures.add(figAccentSusPow7Sus4SeventhCoveredFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPow7Sus4SeventhCoveredFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPow7Sus4SeventhCoveredFeature = param_g.toFeature(figAccentSusPow7Sus4SeventhCoveredFeatureNameGeneric, "", overlappedDurationValue + "");
+		//						System.out.println(figAccentSusPow7Sus4SeventhCoveredFeatureName);
+								segmentFeatures.add(figAccentSusPow7Sus4SeventhCoveredFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			
 			if(FeatureType.DURATION_AUG6_BASS_COVERED.enabled()) {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1616,7 +2519,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1651,7 +2554,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
 					
@@ -1686,7 +2589,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1721,7 +2624,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1756,7 +2659,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
 					
@@ -1791,7 +2694,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1826,7 +2729,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1861,7 +2764,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
 					
@@ -1896,7 +2799,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1931,7 +2834,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -1966,10 +2869,9 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int segmentDurationValue = segment_weighted_duration_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(segmentDurationValue);
-					
 					if(overlappedConsistency) {
 						for(int bin : overlappedBins) {
 							if(segmentDurationValue > bin) {
@@ -2001,7 +2903,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -2036,7 +2938,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -2071,7 +2973,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -2106,7 +3008,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -2141,7 +3043,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -2176,7 +3078,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -2211,7 +3113,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int accentValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, segmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedAccentValues = new ArrayList<Integer>();
 					overlappedAccentValues.add(accentValue);
 					
@@ -2246,7 +3148,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_fr_or_ger_chord);
+					int durationValue = weighted_coverage(featuresWeight, addedNote, parentNotes, interval, nonFigSegmentNotes, eventsInside, parentLabel, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedDurationValues = new ArrayList<Integer>();
 					overlappedDurationValues.add(durationValue);
 					
@@ -2303,8 +3205,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIRST_BASS_IS_ROOT.enabled()) {
 				int interval = 0;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) {
-//					System.out.println("Feature id:" + firstBassIsRootFeature);
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String firstBassIsRootFeatureName = FeatureType.FIRST_BASS_IS_ROOT.name();
 					if(countFeatures) {
 						int firstBassIsRootFeature = param_g.toFeature(FeatureType.FIRST_BASS_IS_ROOT.name(), "", "");
@@ -2324,8 +3225,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIRST_BASS_IS_THIRD.enabled()) {
 				int interval = 1;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) {
-//					System.out.println("Feature id:" + firstBassIsRootFeature);
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String firstBassIsThirdFeatureName = FeatureType.FIRST_BASS_IS_THIRD.name();
 					if(countFeatures) {
 						int firstBassIsThirdFeature = param_g.toFeature(FeatureType.FIRST_BASS_IS_THIRD.name(), "", "");
@@ -2345,7 +3245,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIRST_BASS_IS_FIFTH.enabled()) {
 				int interval = 2;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) { 
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + firstBassIsFifthFeature);
 					String firstBassIsFifthFeatureName = FeatureType.FIRST_BASS_IS_FIFTH.name();
 					if(countFeatures) {
@@ -2366,8 +3266,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIRST_BASS_IS_ADDED_NOTE.enabled()) {
 				int interval = 3;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) { 
-//					System.out.println("Feature id:" + firstBassIsFifthFeature);
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 					String firstBassIsAddedNoteFeatureName = FeatureType.FIRST_BASS_IS_ADDED_NOTE.name();
 					if(countFeatures) {
 						int firstBassIsAddedNoteFeature = param_g.toFeature(FeatureType.FIRST_BASS_IS_ADDED_NOTE.name(), "", "");
@@ -2385,9 +3284,89 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			if(FeatureType.FIRST_BASS_IS_SUS_POW_ROOT.enabled()) {
+				int interval = 0;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String firstBassIsSusPowRootFeatureName = FeatureType.FIRST_BASS_IS_SUS_POW_ROOT.name();
+					if(countFeatures) {
+						int firstBassIsSusPowRootFeature = param_g.toFeature(firstBassIsSusPowRootFeatureName, "", "");
+						featureIDToName.set(firstBassIsSusPowRootFeature, firstBassIsSusPowRootFeatureName);
+						segmentFeatures.add(firstBassIsSusPowRootFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(firstBassIsSusPowRootFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int firstBassIsSusPowRootFeature = param_g.toFeature(firstBassIsSusPowRootFeatureName, "", "");
+//							System.out.println(firstBassIsSusPowRootFeatureName);
+							segmentFeatures.add(firstBassIsSusPowRootFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIRST_BASS_IS_SUS_POW_2ND_OR_4TH.enabled()) {
+				int interval = 1;
+				if(is_sus_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String firstBassIsSusPow2ndOr4thFeatureName = FeatureType.FIRST_BASS_IS_SUS_POW_2ND_OR_4TH.name();
+					if(countFeatures) {
+						int firstBassIsSusPow2ndOr4thFeature = param_g.toFeature(firstBassIsSusPow2ndOr4thFeatureName, "", "");
+						featureIDToName.set(firstBassIsSusPow2ndOr4thFeature, firstBassIsSusPow2ndOr4thFeatureName);
+						segmentFeatures.add(firstBassIsSusPow2ndOr4thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(firstBassIsSusPow2ndOr4thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int firstBassIsSusPow2ndOr4thFeature = param_g.toFeature(firstBassIsSusPow2ndOr4thFeatureName, "", "");
+//							System.out.println(firstBassIsSusPow2ndOr4thFeatureName);
+							segmentFeatures.add(firstBassIsSusPow2ndOr4thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIRST_BASS_IS_SUS_POW_5TH.enabled()) {
+				int interval = 2;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String firstBassIsSusPow5thFeatureName = FeatureType.FIRST_BASS_IS_SUS_POW_5TH.name();
+					if(countFeatures) {
+						int firstBassIsSusPow5thFeature = param_g.toFeature(firstBassIsSusPow5thFeatureName, "", "");
+						featureIDToName.set(firstBassIsSusPow5thFeature, firstBassIsSusPow5thFeatureName);
+						segmentFeatures.add(firstBassIsSusPow5thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(firstBassIsSusPow5thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int firstBassIsSusPow5thFeature = param_g.toFeature(firstBassIsSusPow5thFeatureName, "", "");
+//							System.out.println(firstBassIsSusPow5thFeatureName);
+							segmentFeatures.add(firstBassIsSusPow5thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIRST_BASS_IS_SUS_POW_7SUS4_7TH.enabled()) {
+				int interval = 3;
+				if(is_7sus4_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String firstBassIsSusPow7Sus4_7thFeatureName = FeatureType.FIRST_BASS_IS_SUS_POW_7SUS4_7TH.name();
+					if(countFeatures) {
+						int firstBassIsSusPow7Sus4_7thFeature = param_g.toFeature(firstBassIsSusPow7Sus4_7thFeatureName, "", "");
+						featureIDToName.set(firstBassIsSusPow7Sus4_7thFeature, firstBassIsSusPow7Sus4_7thFeatureName);
+						segmentFeatures.add(firstBassIsSusPow7Sus4_7thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(firstBassIsSusPow7Sus4_7thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int firstBassIsSusPow7Sus4_7thFeature = param_g.toFeature(firstBassIsSusPow7Sus4_7thFeatureName, "", "");
+//							System.out.println(firstBassIsSusPow7Sus4_7thFeatureName);
+							segmentFeatures.add(firstBassIsSusPow7Sus4_7thFeature);
+						}
+					}
+				}
+			}	
+			
 			if(FeatureType.FIRST_BASS_IS_AUG6_BASS.enabled()) {
 				int interval = 0;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) { 
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + firstBassIsAug6BassFeature);
 					String firstBassIsAug6BassFeatureName = FeatureType.FIRST_BASS_IS_AUG6_BASS.name();
 					if(countFeatures) {
@@ -2408,7 +3387,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIRST_BASS_IS_AUG6_3RD.enabled()) {
 				int interval = 1;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) { 
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + firstBassIsAug6_3rdFeature);
 					String firstBassIsAug6_3rdFeatureName = FeatureType.FIRST_BASS_IS_AUG6_3RD.name();
 					if(countFeatures) {
@@ -2429,7 +3408,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIRST_BASS_IS_AUG6_6TH.enabled()) {
 				int interval = 2;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) { 
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + firstBassIsAug6_6thBassFeature);
 					String firstBassIsAug6_6thBassFeatureName = FeatureType.FIRST_BASS_IS_AUG6_6TH.name();
 					if(countFeatures) {
@@ -2450,7 +3429,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIRST_BASS_IS_AUG6_5TH.enabled()) {
 				int interval = 3;
-				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_fr_or_ger_chord)) { 
+				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, firstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + firstBassIsAug6_5thFeature);
 					String firstBassIsAug6_5thFeatureName = FeatureType.FIRST_BASS_IS_AUG6_5TH.name();
 					if(countFeatures) {
@@ -2475,7 +3454,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_FIRST_BASS_IS_ROOT.enabled()) {
 				int interval = 0;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figFirstBassIsRootFeatureName = FeatureType.FIG_FIRST_BASS_IS_ROOT.name();
 					if(countFeatures) {
 						int figFirstBassIsRootFeature = param_g.toFeature(FeatureType.FIG_FIRST_BASS_IS_ROOT.name(), "", "");
@@ -2495,7 +3474,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_FIRST_BASS_IS_THIRD.enabled()) {
 				int interval = 1;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figFirstBassIsThirdFeatureName = FeatureType.FIG_FIRST_BASS_IS_THIRD.name();
 					if(countFeatures) {
 						int figFirstBassIsThirdFeature = param_g.toFeature(FeatureType.FIG_FIRST_BASS_IS_THIRD.name(), "", "");
@@ -2515,7 +3494,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_FIRST_BASS_IS_FIFTH.enabled()) {
 				int interval = 2;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figFirstBassIsFifthFeatureName = FeatureType.FIG_FIRST_BASS_IS_FIFTH.name();
 					if(countFeatures) {
 						int figFirstBassIsFifthFeature = param_g.toFeature(FeatureType.FIG_FIRST_BASS_IS_FIFTH.name(), "", "");
@@ -2535,7 +3514,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_FIRST_BASS_IS_ADDED_NOTE.enabled()) {
 				int interval = 3;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 //					System.out.println("Feature id:" + firstBassIsRootFeature);
 					String figFirstBassIsAddedNoteFeatureName = FeatureType.FIG_FIRST_BASS_IS_ADDED_NOTE.name();
 					if(countFeatures) {
@@ -2554,9 +3533,89 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			if(FeatureType.FIG_FIRST_BASS_IS_SUS_POW_ROOT.enabled()) {
+				int interval = 0;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figFirstBassIsSusPowRootFeatureName = FeatureType.FIG_FIRST_BASS_IS_SUS_POW_ROOT.name();
+					if(countFeatures) {
+						int figFirstBassIsSusPowRootFeature = param_g.toFeature(figFirstBassIsSusPowRootFeatureName, "", "");
+						featureIDToName.set(figFirstBassIsSusPowRootFeature, figFirstBassIsSusPowRootFeatureName);
+						segmentFeatures.add(figFirstBassIsSusPowRootFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figFirstBassIsSusPowRootFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figFirstBassIsSusPowRootFeature = param_g.toFeature(figFirstBassIsSusPowRootFeatureName, "", "");
+//							System.out.println(figFirstBassIsSusPowRootFeatureName);
+							segmentFeatures.add(figFirstBassIsSusPowRootFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_FIRST_BASS_IS_SUS_POW_2ND_OR_4TH.enabled()) {
+				int interval = 1;
+				if(is_sus_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figFirstBassIsSusPow2ndOr4thFeatureName = FeatureType.FIG_FIRST_BASS_IS_SUS_POW_2ND_OR_4TH.name();
+					if(countFeatures) {
+						int figFirstBassIsSusPow2ndOr4thFeature = param_g.toFeature(figFirstBassIsSusPow2ndOr4thFeatureName, "", "");
+						featureIDToName.set(figFirstBassIsSusPow2ndOr4thFeature, figFirstBassIsSusPow2ndOr4thFeatureName);
+						segmentFeatures.add(figFirstBassIsSusPow2ndOr4thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figFirstBassIsSusPow2ndOr4thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figFirstBassIsSusPow2ndOr4thFeature = param_g.toFeature(figFirstBassIsSusPow2ndOr4thFeatureName, "", "");
+//							System.out.println(figFirstBassIsSusPow2ndOr4thFeatureName);
+							segmentFeatures.add(figFirstBassIsSusPow2ndOr4thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_FIRST_BASS_IS_SUS_POW_5TH.enabled()) {
+				int interval = 2;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figFirstBassIsSusPow5thFeatureName = FeatureType.FIG_FIRST_BASS_IS_SUS_POW_5TH.name();
+					if(countFeatures) {
+						int figFirstBassIsSusPow5thFeature = param_g.toFeature(figFirstBassIsSusPow5thFeatureName, "", "");
+						featureIDToName.set(figFirstBassIsSusPow5thFeature, figFirstBassIsSusPow5thFeatureName);
+						segmentFeatures.add(figFirstBassIsSusPow5thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figFirstBassIsSusPow5thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figFirstBassIsSusPow5thFeature = param_g.toFeature(figFirstBassIsSusPow5thFeatureName, "", "");
+//							System.out.println(figFirstBassIsSusPow5thFeatureName);
+							segmentFeatures.add(figFirstBassIsSusPow5thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_FIRST_BASS_IS_SUS_POW_7SUS4_7TH.enabled()) {
+				int interval = 3;
+				if(is_7sus4_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figFirstBassIsSusPow7Sus4_7thFeatureName = FeatureType.FIG_FIRST_BASS_IS_SUS_POW_7SUS4_7TH.name();
+					if(countFeatures) {
+						int figFirstBassIsSusPow7Sus4_7thFeature = param_g.toFeature(figFirstBassIsSusPow7Sus4_7thFeatureName, "", "");
+						featureIDToName.set(figFirstBassIsSusPow7Sus4_7thFeature, figFirstBassIsSusPow7Sus4_7thFeatureName);
+						segmentFeatures.add(figFirstBassIsSusPow7Sus4_7thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figFirstBassIsSusPow7Sus4_7thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figFirstBassIsSusPow7Sus4_7thFeature = param_g.toFeature(figFirstBassIsSusPow7Sus4_7thFeatureName, "", "");
+//							System.out.println(figFirstBassIsSusPow7Sus4_7thFeatureName);
+							segmentFeatures.add(figFirstBassIsSusPow7Sus4_7thFeature);
+						}
+					}
+				}
+			}
+			
 			if(FeatureType.FIG_FIRST_BASS_IS_AUG6_BASS.enabled()) {
 				int interval = 0;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) { 
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + figFirstBassIsAug6Bass_BassFeature);
 					String figFirstBassIsAug6Bass_BassFeatureName = FeatureType.FIG_FIRST_BASS_IS_AUG6_BASS.name();
 					if(countFeatures) {
@@ -2577,7 +3636,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_FIRST_BASS_IS_AUG6_3RD.enabled()) {
 				int interval = 1;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) { 
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + figFirstBassIsAug6_3rdBassFeature);
 					String figFirstBassIsAug6_3rdBassFeatureName = FeatureType.FIG_FIRST_BASS_IS_AUG6_3RD.name();
 					if(countFeatures) {
@@ -2598,7 +3657,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_FIRST_BASS_IS_AUG6_6TH.enabled()) {
 				int interval = 2;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) { 
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + figFirstBassIsAug6_6thBassFeature);
 					String figFirstBassIsAug6_6thBassFeatureName = FeatureType.FIG_FIRST_BASS_IS_AUG6_6TH.name();
 					if(countFeatures) {
@@ -2619,7 +3678,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_FIRST_BASS_IS_AUG6_5TH.enabled()) {
 				int interval = 3;
-				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_fr_or_ger_chord)) { 
+				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigFirstBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) { 
 //					System.out.println("Feature id:" + figFirstBassIsAug6_5thBassFeature);
 					String figFirstBassIsAug6_5thBassFeatureName = FeatureType.FIG_FIRST_BASS_IS_AUG6_5TH.name();
 					if(countFeatures) {
@@ -2642,7 +3701,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 
 			if(FeatureType.SEGMENT_BASS_IS_ROOT.enabled()) {
 				int interval = 0;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsRootFeatureName = FeatureType.SEGMENT_BASS_IS_ROOT.name();
 					if(countFeatures) {
 						int segmentBassIsRootFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_ROOT.name(), "", "");
@@ -2662,7 +3721,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.SEGMENT_BASS_IS_THIRD.enabled()) {
 				int interval = 1;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsThirdFeatureName = FeatureType.SEGMENT_BASS_IS_THIRD.name();
 					if(countFeatures) {
 						int segmentBassIsThirdFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_THIRD.name(), "", "");
@@ -2682,7 +3741,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.SEGMENT_BASS_IS_FIFTH.enabled()) {
 				int interval = 2;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsFifthFeatureName = FeatureType.SEGMENT_BASS_IS_FIFTH.name();
 					if(countFeatures) {
 						int segmentBassIsFifthFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_FIFTH.name(), "", "");
@@ -2702,7 +3761,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.SEGMENT_BASS_IS_ADDED_NOTE.enabled()) {
 				int interval = 3;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsAddedNoteFeatureName = FeatureType.SEGMENT_BASS_IS_ADDED_NOTE.name();
 					if(countFeatures) {
 						int segmentBassIsAddedNoteFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_ADDED_NOTE.name(), "", "");
@@ -2720,9 +3779,89 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			if(FeatureType.SEGMENT_BASS_IS_SUS_POW_ROOT.enabled()) {
+				int interval = 0;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String segmentBassIsSusPowRootFeatureName = FeatureType.SEGMENT_BASS_IS_SUS_POW_ROOT.name();
+					if(countFeatures) {
+						int segmentBassIsSusPowRootFeature = param_g.toFeature(segmentBassIsSusPowRootFeatureName, "", "");
+						featureIDToName.set(segmentBassIsSusPowRootFeature, segmentBassIsSusPowRootFeatureName);
+						segmentFeatures.add(segmentBassIsSusPowRootFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(segmentBassIsSusPowRootFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int segmentBassIsSusPowRootFeature = param_g.toFeature(segmentBassIsSusPowRootFeatureName, "", "");
+//							System.out.println(segmentBassIsSusPowRootFeatureName);
+							segmentFeatures.add(segmentBassIsSusPowRootFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.SEGMENT_BASS_IS_SUS_POW_2ND_OR_4TH.enabled()) {
+				int interval = 1;
+				if(is_sus_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String segmentBassIsSusPow2ndOr4thFeatureName = FeatureType.SEGMENT_BASS_IS_SUS_POW_2ND_OR_4TH.name();
+					if(countFeatures) {
+						int segmentBassIsSusPow2ndOr4thFeature = param_g.toFeature(segmentBassIsSusPow2ndOr4thFeatureName, "", "");
+						featureIDToName.set(segmentBassIsSusPow2ndOr4thFeature, segmentBassIsSusPow2ndOr4thFeatureName);
+						segmentFeatures.add(segmentBassIsSusPow2ndOr4thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(segmentBassIsSusPow2ndOr4thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int segmentBassIsSusPow2ndOr4thFeature = param_g.toFeature(segmentBassIsSusPow2ndOr4thFeatureName, "", "");
+//							System.out.println(segmentBassIsSusPow2ndOr4thFeatureName);
+							segmentFeatures.add(segmentBassIsSusPow2ndOr4thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.SEGMENT_BASS_IS_SUS_POW_5TH.enabled()) {
+				int interval = 2;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String segmentBassIsSusPow5thFeatureName = FeatureType.SEGMENT_BASS_IS_SUS_POW_5TH.name();
+					if(countFeatures) {
+						int segmentBassIsSusPow5thFeature = param_g.toFeature(segmentBassIsSusPow5thFeatureName, "", "");
+						featureIDToName.set(segmentBassIsSusPow5thFeature, segmentBassIsSusPow5thFeatureName);
+						segmentFeatures.add(segmentBassIsSusPow5thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(segmentBassIsSusPow5thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int segmentBassIsSusPow5thFeature = param_g.toFeature(segmentBassIsSusPow5thFeatureName, "", "");
+//							System.out.println(segmentBassIsSusPow5thFeatureName);
+							segmentFeatures.add(segmentBassIsSusPow5thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.SEGMENT_BASS_IS_SUS_POW_7SUS4_7TH.enabled()) {
+				int interval = 3;
+				if(is_7sus4_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String segmentBassIsSusPow7Sus4_7thFeatureName = FeatureType.SEGMENT_BASS_IS_SUS_POW_7SUS4_7TH.name();
+					if(countFeatures) {
+						int segmentBassIsSusPow7Sus4_7thFeature = param_g.toFeature(segmentBassIsSusPow7Sus4_7thFeatureName, "", "");
+						featureIDToName.set(segmentBassIsSusPow7Sus4_7thFeature, segmentBassIsSusPow7Sus4_7thFeatureName);
+						segmentFeatures.add(segmentBassIsSusPow7Sus4_7thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(segmentBassIsSusPow7Sus4_7thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int segmentBassIsSusPow7Sus4_7thFeature = param_g.toFeature(segmentBassIsSusPow7Sus4_7thFeatureName, "", "");
+//							System.out.println(segmentBassIsSusPow7Sus4_7thFeatureName);
+							segmentFeatures.add(segmentBassIsSusPow7Sus4_7thFeature);
+						}
+					}
+				}
+			}
+			
 			if(FeatureType.SEGMENT_BASS_IS_AUG6_BASS.enabled()) {
 				int interval = 0;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsAug6BassFeatureName = FeatureType.SEGMENT_BASS_IS_AUG6_BASS.name();
 					if(countFeatures) {
 						int segmentBassIsAug6BassFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_AUG6_BASS.name(), "", "");
@@ -2742,7 +3881,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.SEGMENT_BASS_IS_AUG6_3RD.enabled()) {
 				int interval = 1;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsAug6_3rdFeatureName = FeatureType.SEGMENT_BASS_IS_AUG6_3RD.name();
 					if(countFeatures) {
 						int segmentBassIsAug6_3rdFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_AUG6_3RD.name(), "", "");
@@ -2762,7 +3901,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.SEGMENT_BASS_IS_AUG6_6TH.enabled()) {
 				int interval = 2;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsAug6_6thFeatureName = FeatureType.SEGMENT_BASS_IS_AUG6_6TH.name();
 					if(countFeatures) {
 						int segmentBassIsAug6_6thFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_AUG6_6TH.name(), "", "");
@@ -2782,7 +3921,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.SEGMENT_BASS_IS_AUG6_5TH.enabled()) {
 				int interval = 3;
-				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_fr_or_ger_chord)) {
+				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, segmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String segmentBassIsAug6_5thFeatureName = FeatureType.SEGMENT_BASS_IS_AUG6_5TH.name();
 					if(countFeatures) {
 						int segmentBassIsAug6_5thFeature = param_g.toFeature(FeatureType.SEGMENT_BASS_IS_AUG6_5TH.name(), "", "");
@@ -2804,7 +3943,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_ROOT.enabled()) {
 				int interval = 0;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsRootFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_ROOT.name();
 					if(countFeatures) {
 						int figSegmentBassIsRootFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_ROOT.name(), "", "");
@@ -2824,7 +3963,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_THIRD.enabled()) {
 				int interval = 1;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsThirdFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_THIRD.name();
 					if(countFeatures) {
 						int figSegmentBassIsThirdFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_THIRD.name(), "", "");
@@ -2844,7 +3983,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_FIFTH.enabled()) {
 				int interval = 2;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsFifthFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_FIFTH.name();
 					if(countFeatures) {
 						int figSegmentBassIsFifthFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_FIFTH.name(), "", "");
@@ -2864,7 +4003,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_ADDED_NOTE.enabled()) {
 				int interval = 3;
-				if(!is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_reg_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsAddedNoteFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_ADDED_NOTE.name();
 					if(countFeatures) {
 						int figSegmentBassIsAddedNoteFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_ADDED_NOTE.name(), "", "");
@@ -2882,9 +4021,89 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			if(FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_ROOT.enabled()) {
+				int interval = 0;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figSegmentBassIsSusPowRootFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_ROOT.name();
+					if(countFeatures) {
+						int figSegmentBassIsSusPowRootFeature = param_g.toFeature(figSegmentBassIsSusPowRootFeatureName, "", "");
+						featureIDToName.set(figSegmentBassIsSusPowRootFeature, figSegmentBassIsSusPowRootFeatureName);
+						segmentFeatures.add(figSegmentBassIsSusPowRootFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figSegmentBassIsSusPowRootFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figSegmentBassIsSusPowRootFeature = param_g.toFeature(figSegmentBassIsSusPowRootFeatureName, "", "");
+//							System.out.println(figSegmentBassIsSusPowRootFeatureName);
+							segmentFeatures.add(figSegmentBassIsSusPowRootFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_2ND_OR_4TH.enabled()) {
+				int interval = 1;
+				if(is_sus_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figSegmentBassIsSusPow2ndOr4thFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_2ND_OR_4TH.name();
+					if(countFeatures) {
+						int figSegmentBassIsSusPow2ndOr4thFeature = param_g.toFeature(figSegmentBassIsSusPow2ndOr4thFeatureName, "", "");
+						featureIDToName.set(figSegmentBassIsSusPow2ndOr4thFeature, figSegmentBassIsSusPow2ndOr4thFeatureName);
+						segmentFeatures.add(figSegmentBassIsSusPow2ndOr4thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figSegmentBassIsSusPow2ndOr4thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figSegmentBassIsSusPow2ndOr4thFeature = param_g.toFeature(figSegmentBassIsSusPow2ndOr4thFeatureName, "", "");
+//							System.out.println(figSegmentBassIsSusPow2ndOr4thFeatureName);
+							segmentFeatures.add(figSegmentBassIsSusPow2ndOr4thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_5TH.enabled()) {
+				int interval = 2;
+				if(is_sus_or_pow_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figSegmentBassIsSusPow5thFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_5TH.name();
+					if(countFeatures) {
+						int figSegmentBassIsSusPow5thFeature = param_g.toFeature(figSegmentBassIsSusPow5thFeatureName, "", "");
+						featureIDToName.set(figSegmentBassIsSusPow5thFeature, figSegmentBassIsSusPow5thFeatureName);
+						segmentFeatures.add(figSegmentBassIsSusPow5thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figSegmentBassIsSusPow5thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figSegmentBassIsSusPow5thFeature = param_g.toFeature(figSegmentBassIsSusPow5thFeatureName, "", "");
+//							System.out.println(figSegmentBassIsSusPow5thFeatureName);
+							segmentFeatures.add(figSegmentBassIsSusPow5thFeature);
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_7SUS4_7TH.enabled()) {
+				int interval = 3;
+				if(is_7sus4_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+					String figSegmentBassIsSusPow7Sus4_7thFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_SUS_POW_7SUS4_7TH.name();
+					if(countFeatures) {
+						int figSegmentBassIsSusPow7Sus4_7thFeature = param_g.toFeature(figSegmentBassIsSusPow7Sus4_7thFeatureName, "", "");
+						featureIDToName.set(figSegmentBassIsSusPow7Sus4_7thFeature, figSegmentBassIsSusPow7Sus4_7thFeatureName);
+						segmentFeatures.add(figSegmentBassIsSusPow7Sus4_7thFeature);
+					}
+					else {
+						Integer count = featureNameToID.get(figSegmentBassIsSusPow7Sus4_7thFeatureName);
+						if((count != null) && (count > MIN_FEATURE_COUNT)) {
+							int figSegmentBassIsSusPow7Sus4_7thFeature = param_g.toFeature(figSegmentBassIsSusPow7Sus4_7thFeatureName, "", "");
+//							System.out.println(figSegmentBassIsSusPow7Sus4_7thFeatureName);
+							segmentFeatures.add(figSegmentBassIsSusPow7Sus4_7thFeature);
+						}
+					}
+				}
+			}
+			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_BASS.enabled()) {
 				int interval = 0;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsAug6BassFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_AUG6_BASS.name();
 					if(countFeatures) {
 						int figSegmentBassIsAug6BassFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_BASS.name(), "", "");
@@ -2904,7 +4123,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_3RD.enabled()) {
 				int interval = 1;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsAug6_3rdFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_AUG6_3RD.name();
 					if(countFeatures) {
 						int figSegmentBassIsAug6_3rdFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_3RD.name(), "", "");
@@ -2924,7 +4143,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_6TH.enabled()) {
 				int interval = 2;
-				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_aug6_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsAug6_6thFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_AUG6_6TH.name();
 					if(countFeatures) {
 						int figSegmentBassIsAug6_6thFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_6TH.name(), "", "");
@@ -2944,7 +4163,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			if(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_5TH.enabled()) {
 				int interval = 3;
-				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_fr_or_ger_chord)) {
+				if(is_fr_or_ger_chord && bassIsInterval(interval, addedNote, parentNotes, nonFigSegmentBass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					String figSegmentBassIsAug6_5thFeatureName = FeatureType.FIG_SEGMENT_BASS_IS_AUG6_5TH.name();
 					if(countFeatures) {
 						int figSegmentBassIsAug6_5thFeature = param_g.toFeature(FeatureType.FIG_SEGMENT_BASS_IS_AUG6_5TH.name(), "", "");
@@ -2965,10 +4184,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			List<Note> bassNotes = findBassNotes(eventsInside);
 			
 			if(FeatureType.DURATION_BASS_IS_ROOT.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3000,10 +4219,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.DURATION_BASS_IS_THIRD.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3035,10 +4254,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.DURATION_BASS_IS_FIFTH.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3070,10 +4289,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.DURATION_BASS_IS_ADDED_NOTE.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3104,11 +4323,157 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			if(FeatureType.DURATION_SUS_POW_BASS_IS_ROOT.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String durationSusPowBassIsRootFeatureNameGeneric = FeatureType.DURATION_SUS_POW_BASS_IS_ROOT.name();
+						String durationSusPowBassIsRootFeatureName = durationSusPowBassIsRootFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int durationSusPowBassIsRootFeature = param_g.toFeature(durationSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue+ "");
+							featureIDToName.set(durationSusPowBassIsRootFeature, durationSusPowBassIsRootFeatureName);
+							segmentFeatures.add(durationSusPowBassIsRootFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPowBassIsRootFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPowBassIsRootFeature = param_g.toFeature(durationSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue+ "");
+		//						System.out.println(durationSusPowBassIsRootFeatureName);
+								segmentFeatures.add(durationSusPowBassIsRootFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.DURATION_SUS_POW_BASS_IS_2ND_OR_4TH.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String durationSusPowBassIs2ndOr4thFeatureNameGeneric = FeatureType.DURATION_SUS_POW_BASS_IS_2ND_OR_4TH.name();
+						String durationSusPowBassIs2ndOr4thFeatureName = durationSusPowBassIs2ndOr4thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int durationSusPowBassIs2ndOr4thFeature = param_g.toFeature(durationSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue+ "");
+							featureIDToName.set(durationSusPowBassIs2ndOr4thFeature, durationSusPowBassIs2ndOr4thFeatureName);
+							segmentFeatures.add(durationSusPowBassIs2ndOr4thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPowBassIs2ndOr4thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPowBassIs2ndOr4thFeature = param_g.toFeature(durationSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue+ "");
+		//						System.out.println(durationSusPowBassIs2ndOr4thFeatureName);
+								segmentFeatures.add(durationSusPowBassIs2ndOr4thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.DURATION_SUS_POW_BASS_IS_5TH.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String durationSusPowBassIs5thFeatureNameGeneric = FeatureType.DURATION_SUS_POW_BASS_IS_5TH.name();
+						String durationSusPowBassIs5thFeatureName = durationSusPowBassIs5thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int durationSusPowBassIs5thFeature = param_g.toFeature(durationSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue+ "");
+							featureIDToName.set(durationSusPowBassIs5thFeature, durationSusPowBassIs5thFeatureName);
+							segmentFeatures.add(durationSusPowBassIs5thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPowBassIs5thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPowBassIs5thFeature = param_g.toFeature(durationSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue+ "");
+		//						System.out.println(durationSusPowBassIs5thFeatureName);
+								segmentFeatures.add(durationSusPowBassIs5thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.DURATION_SUS_POW_BASS_IS_7SUS4_7TH.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String durationSusPowBassIs7Sus4_7thFeatureNameGeneric = FeatureType.DURATION_SUS_POW_BASS_IS_7SUS4_7TH.name();
+						String durationSusPowBassIs7Sus4_7thFeatureName = durationSusPowBassIs7Sus4_7thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int durationSusPowBassIs7Sus4_7thFeature = param_g.toFeature(durationSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue+ "");
+							featureIDToName.set(durationSusPowBassIs7Sus4_7thFeature, durationSusPowBassIs7Sus4_7thFeatureName);
+							segmentFeatures.add(durationSusPowBassIs7Sus4_7thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(durationSusPowBassIs7Sus4_7thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int durationSusPowBassIs7Sus4_7thFeature = param_g.toFeature(durationSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue+ "");
+		//						System.out.println(durationSusPowBassIs7Sus4_7thFeatureName);
+								segmentFeatures.add(durationSusPowBassIs7Sus4_7thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			
+			
 			if(FeatureType.DURATION_BASS_IS_AUG6_BASS.enabled()) {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3143,7 +4508,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3178,7 +4543,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3213,7 +4578,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3245,10 +4610,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_BASS_IS_ROOT.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3280,10 +4645,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_BASS_IS_THIRD.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3316,10 +4681,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_BASS_IS_FIFTH.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3352,10 +4717,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.ACCENT_BASS_IS_ADDED_NOTE.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3386,12 +4751,156 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 					}
 				}
 			}
+		
+			if(FeatureType.ACCENT_SUS_POW_BASS_IS_ROOT.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String accentSusPowBassIsRootFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_BASS_IS_ROOT.name();
+						String accentSusPowBassIsRootFeatureName = accentSusPowBassIsRootFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int accentSusPowBassIsRootFeature = param_g.toFeature(accentSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(accentSusPowBassIsRootFeature, accentSusPowBassIsRootFeatureName);	
+							segmentFeatures.add(accentSusPowBassIsRootFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPowBassIsRootFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPowBassIsRootFeature = param_g.toFeature(accentSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(accentSusPowBassIsRootFeatureName);
+								segmentFeatures.add(accentSusPowBassIsRootFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.ACCENT_SUS_POW_BASS_IS_2ND_OR_4TH.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String accentSusPowBassIs2ndOr4thFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_BASS_IS_2ND_OR_4TH.name();
+						String accentSusPowBassIs2ndOr4thFeatureName = accentSusPowBassIs2ndOr4thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int accentSusPowBassIs2ndOr4thFeature = param_g.toFeature(accentSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(accentSusPowBassIs2ndOr4thFeature, accentSusPowBassIs2ndOr4thFeatureName);	
+							segmentFeatures.add(accentSusPowBassIs2ndOr4thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPowBassIs2ndOr4thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPowBassIs2ndOr4thFeature = param_g.toFeature(accentSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(accentSusPowBassIs2ndOr4thFeatureName);
+								segmentFeatures.add(accentSusPowBassIs2ndOr4thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.ACCENT_SUS_POW_BASS_IS_5TH.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String accentSusPowBassIs5thFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_BASS_IS_5TH.name();
+						String accentSusPowBassIs5thFeatureName = accentSusPowBassIs5thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int accentSusPowBassIs5thFeature = param_g.toFeature(accentSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(accentSusPowBassIs5thFeature, accentSusPowBassIs5thFeatureName);	
+							segmentFeatures.add(accentSusPowBassIs5thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPowBassIs5thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPowBassIs5thFeature = param_g.toFeature(accentSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(accentSusPowBassIs5thFeatureName);
+								segmentFeatures.add(accentSusPowBassIs5thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.ACCENT_SUS_POW_BASS_IS_7SUS4_7TH.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String accentSusPowBassIs7Sus4_7thFeatureNameGeneric = FeatureType.ACCENT_SUS_POW_BASS_IS_7SUS4_7TH.name();
+						String accentSusPowBassIs7Sus4_7thFeatureName = accentSusPowBassIs7Sus4_7thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int accentSusPowBassIs7Sus4_7thFeature = param_g.toFeature(accentSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(accentSusPowBassIs7Sus4_7thFeature, accentSusPowBassIs7Sus4_7thFeatureName);	
+							segmentFeatures.add(accentSusPowBassIs7Sus4_7thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(accentSusPowBassIs7Sus4_7thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int accentSusPowBassIs7Sus4_7thFeature = param_g.toFeature(accentSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(accentSusPowBassIs7Sus4_7thFeatureName);
+								segmentFeatures.add(accentSusPowBassIs7Sus4_7thFeature);
+							}
+						}
+					}
+				}
+			}
 			
 			if(FeatureType.ACCENT_BASS_IS_AUG6_BASS.enabled()) {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3426,7 +4935,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3461,7 +4970,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3496,7 +5005,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, bassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3530,10 +5039,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			List<Note> nonFigBassNotes = findNonFigBassNotes(eventsInside, previousEvent, nextEvent, parentNotes);
 			
 			if(FeatureType.FIG_DURATION_BASS_IS_ROOT.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3565,10 +5074,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_DURATION_BASS_IS_THIRD.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3601,10 +5110,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_DURATION_BASS_IS_FIFTH.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3637,10 +5146,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_DURATION_BASS_IS_ADDED_NOTE.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3672,11 +5181,156 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_BASS_IS_ROOT.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figDurationSusPowBassIsRootFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_BASS_IS_ROOT.name();
+						String figDurationSusPowBassIsRootFeatureName = figDurationSusPowBassIsRootFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figDurationSusPowBassIsRootFeature = param_g.toFeature(figDurationSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figDurationSusPowBassIsRootFeature, figDurationSusPowBassIsRootFeatureName);
+							segmentFeatures.add(figDurationSusPowBassIsRootFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPowBassIsRootFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPowBassIsRootFeature = param_g.toFeature(figDurationSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figDurationSusPowBassIsRootFeatureName);
+								segmentFeatures.add(figDurationSusPowBassIsRootFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_BASS_IS_2ND_OR_4TH.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figDurationSusPowBassIs2ndOr4thFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_BASS_IS_2ND_OR_4TH.name();
+						String figDurationSusPowBassIs2ndOr4thFeatureName = figDurationSusPowBassIs2ndOr4thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figDurationSusPowBassIs2ndOr4thFeature = param_g.toFeature(figDurationSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figDurationSusPowBassIs2ndOr4thFeature, figDurationSusPowBassIs2ndOr4thFeatureName);
+							segmentFeatures.add(figDurationSusPowBassIs2ndOr4thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPowBassIs2ndOr4thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPowBassIs2ndOr4thFeature = param_g.toFeature(figDurationSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figDurationSusPowBassIs2ndOr4thFeatureName);
+								segmentFeatures.add(figDurationSusPowBassIs2ndOr4thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_BASS_IS_5TH.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figDurationSusPowBassIs5thFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_BASS_IS_5TH.name();
+						String figDurationSusPowBassIs5thFeatureName = figDurationSusPowBassIs5thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figDurationSusPowBassIs5thFeature = param_g.toFeature(figDurationSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figDurationSusPowBassIs5thFeature, figDurationSusPowBassIs5thFeatureName);
+							segmentFeatures.add(figDurationSusPowBassIs5thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPowBassIs5thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPowBassIs5thFeature = param_g.toFeature(figDurationSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figDurationSusPowBassIs5thFeatureName);
+								segmentFeatures.add(figDurationSusPowBassIs5thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_DURATION_SUS_POW_BASS_IS_7SUS4_7TH.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("DURATION");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figDurationSusPowBassIs7Sus4_7thFeatureNameGeneric = FeatureType.FIG_DURATION_SUS_POW_BASS_IS_7SUS4_7TH.name();
+						String figDurationSusPowBassIs7Sus4_7thFeatureName = figDurationSusPowBassIs7Sus4_7thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figDurationSusPowBassIs7Sus4_7thFeature = param_g.toFeature(figDurationSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figDurationSusPowBassIs7Sus4_7thFeature, figDurationSusPowBassIs7Sus4_7thFeatureName);
+							segmentFeatures.add(figDurationSusPowBassIs7Sus4_7thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figDurationSusPowBassIs7Sus4_7thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figDurationSusPowBassIs7Sus4_7thFeature = param_g.toFeature(figDurationSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figDurationSusPowBassIs7Sus4_7thFeatureName);
+								segmentFeatures.add(figDurationSusPowBassIs7Sus4_7thFeature);
+							}
+						}
+					}
+				}
+			}			
+			
 			if(FeatureType.FIG_DURATION_BASS_IS_AUG6_BASS.enabled()) {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3711,7 +5365,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3746,7 +5400,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3781,7 +5435,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("DURATION");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
 					
@@ -3813,10 +5467,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_BASS_IS_ROOT.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3849,10 +5503,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_BASS_IS_THIRD.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3885,10 +5539,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_BASS_IS_FIFTH.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3921,10 +5575,10 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			if(FeatureType.FIG_ACCENT_BASS_IS_ADDED_NOTE.enabled()) {
-				if(!is_aug6_chord) {
+				if(is_reg_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3956,11 +5610,160 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 			}
 			
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_ROOT.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 0;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figAccentSusPowBassIsRootFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_ROOT.name();
+						String figAccentSusPowBassIsRootFeatureName = figAccentSusPowBassIsRootFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figAccentSusPowBassIsRootFeature = param_g.toFeature(figAccentSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figAccentSusPowBassIsRootFeature, figAccentSusPowBassIsRootFeatureName);	
+							segmentFeatures.add(figAccentSusPowBassIsRootFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPowBassIsRootFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPowBassIsRootFeature = param_g.toFeature(figAccentSusPowBassIsRootFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figAccentSusPowBassIsRootFeatureName);
+								segmentFeatures.add(figAccentSusPowBassIsRootFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_2ND_OR_4TH.enabled()) {
+				if(is_sus_chord) {
+					int interval = 1;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figAccentSusPowBassIs2ndOr4thFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_2ND_OR_4TH.name();
+						String figAccentSusPowBassIs2ndOr4thFeatureName = figAccentSusPowBassIs2ndOr4thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figAccentSusPowBassIs2ndOr4thFeature = param_g.toFeature(figAccentSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figAccentSusPowBassIs2ndOr4thFeature, figAccentSusPowBassIs2ndOr4thFeatureName);	
+							segmentFeatures.add(figAccentSusPowBassIs2ndOr4thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPowBassIs2ndOr4thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPowBassIs2ndOr4thFeature = param_g.toFeature(figAccentSusPowBassIs2ndOr4thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figAccentSusPowBassIs2ndOr4thFeatureName);
+								segmentFeatures.add(figAccentSusPowBassIs2ndOr4thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_5TH.enabled()) {
+				if(is_sus_or_pow_chord) {
+					int interval = 2;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figAccentSusPowBassIs5thFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_5TH.name();
+						String figAccentSusPowBassIs5thFeatureName = figAccentSusPowBassIs5thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figAccentSusPowBassIs5thFeature = param_g.toFeature(figAccentSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figAccentSusPowBassIs5thFeature, figAccentSusPowBassIs5thFeatureName);	
+							segmentFeatures.add(figAccentSusPowBassIs5thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPowBassIs5thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPowBassIs5thFeature = param_g.toFeature(figAccentSusPowBassIs5thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figAccentSusPowBassIs5thFeatureName);
+								segmentFeatures.add(figAccentSusPowBassIs5thFeature);
+							}
+						}
+					}
+				}
+			}
+			
+			if(FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_7SUS4_7TH.enabled()) {
+				if(is_7sus4_chord) {
+					int interval = 3;
+					featuresWeight = Weight.valueOf("ACCENT");
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
+					
+					List<Integer> overlappedBassValues = new ArrayList<Integer>();
+					overlappedBassValues.add(bassWeight);
+					
+					if(overlappedConsistency) {
+						for(int bin : overlappedBins) {
+							if(bassWeight > bin) {
+								overlappedBassValues.add(bin);
+							}
+						}
+					}
+					
+					for(int overlappedBassValue : overlappedBassValues) {
+						String figAccentSusPowBassIs7Sus4_7thFeatureNameGeneric = FeatureType.FIG_ACCENT_SUS_POW_BASS_IS_7SUS4_7TH.name();
+						String figAccentSusPowBassIs7Sus4_7thFeatureName = figAccentSusPowBassIs7Sus4_7thFeatureNameGeneric + "_" + overlappedBassValue;
+						if(countFeatures) {
+							int figAccentSusPowBassIs7Sus4_7thFeature = param_g.toFeature(figAccentSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue + "");
+							featureIDToName.set(figAccentSusPowBassIs7Sus4_7thFeature, figAccentSusPowBassIs7Sus4_7thFeatureName);	
+							segmentFeatures.add(figAccentSusPowBassIs7Sus4_7thFeature);
+						}
+						else {
+							Integer count = featureNameToID.get(figAccentSusPowBassIs7Sus4_7thFeatureName);
+							if((count != null) && (count > MIN_FEATURE_COUNT)) {
+								int figAccentSusPowBassIs7Sus4_7thFeature = param_g.toFeature(figAccentSusPowBassIs7Sus4_7thFeatureNameGeneric, "", overlappedBassValue + "");
+		//						System.out.println(figAccentSusPowBassIs7Sus4_7thFeatureName);
+								segmentFeatures.add(figAccentSusPowBassIs7Sus4_7thFeature);
+							}
+						}
+					}
+				}
+			}
+			
 			if(FeatureType.FIG_ACCENT_BASS_IS_AUG6_BASS.enabled()) {
 				if(is_aug6_chord) {
 					int interval = 0;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -3996,7 +5799,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 1;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -4032,7 +5835,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_aug6_chord) {
 					int interval = 2;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight =  weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -4068,7 +5871,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				if(is_fr_or_ger_chord) {
 					int interval = 3;
 					featuresWeight = Weight.valueOf("ACCENT");
-					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_fr_or_ger_chord);
+					int bassWeight = weightedBass(featuresWeight, addedNote, parentNotes, interval, eventsInside, nonFigBassNotes, overlappedConsistency, is_reg_chord, is_pow_chord, is_7sus4_chord);
 					
 					List<Integer> overlappedBassValues = new ArrayList<Integer>();
 					overlappedBassValues.add(bassWeight);
@@ -4157,7 +5960,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 	}
 	
 	private static String getMode(String parentLabel) {
-		String pattern = "(minmaj|maj|min|dim|hdim|aug|7|ger|it|fr)";
+		String pattern = "(7sus4|sus2|sus4|maj\\(\\*3\\)|maj|min|dim|ger|it|fr)";
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(parentLabel);
 		String mode = m.find() ? m.group(0) : "";
@@ -4166,7 +5969,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 	}
 	
 	private static String getAddedNote(String parentLabel) {
-		if(isAug6Chord(parentLabel)) {
+		if(isAug6Chord(parentLabel) || isSusOrPowChord(parentLabel)) {
 			return "";
 		}
 		String pattern = "(4|6|7)";
@@ -4437,7 +6240,8 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		chordNotes.add(rootIndex);
 
 		// interval distances
-		int MAJOR_THIRD = 4;		// interval of major third
+		int MAJOR_SECOND = 2;		// interval of major second
+		int MAJOR_THIRD = 4;		// " major third
 		int MINOR_THIRD = 3;		// " minor third
 		int PERFECT_FOURTH = 5;		// " major fourth
 		int PERFECT_FIFTH = 7;		// " perfect fifth
@@ -4459,6 +6263,22 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			
 			switch(CRMain.simplification) {
 			case GENERIC_ADDED_NOTES:
+				switch(addedNote) {
+				case "4":
+					chordNotes.add((rootIndex + PERFECT_FOURTH) % NUM_KEYS);
+					break;
+				case "6":
+					chordNotes.add((rootIndex + MAJOR_SIXTH) % NUM_KEYS);
+					break;
+				case "7":
+					chordNotes.add((rootIndex + MAJOR_SEVENTH) % NUM_KEYS);
+					chordNotes.add((rootIndex + MINOR_SEVENTH) % NUM_KEYS);
+					break;
+				default:
+					break;
+				}
+				break;
+			case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
 				switch(addedNote) {
 				case "4":
 					chordNotes.add((rootIndex + PERFECT_FOURTH) % NUM_KEYS);
@@ -4521,6 +6341,23 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 					break;
 				}
 				break;
+			case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
+				switch(addedNote) {
+				case "4":
+					chordNotes.add((rootIndex + PERFECT_FOURTH) % NUM_KEYS);
+					break;
+				case "6":
+					chordNotes.add((rootIndex + MAJOR_SIXTH) % NUM_KEYS);
+					chordNotes.add((rootIndex + MINOR_SIXTH) % NUM_KEYS);
+					break;
+				case "7":
+					chordNotes.add((rootIndex + MAJOR_SEVENTH) % NUM_KEYS);
+					chordNotes.add((rootIndex + MINOR_SEVENTH) % NUM_KEYS);
+					break;
+				default:
+					break;
+				}
+				break;
 			case ADDED_NOTES:
 				switch(addedNote) {
 				case "4":
@@ -4540,11 +6377,6 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				break;
 			}
 			
-			break;
-		case "minmaj":
-			chordNotes.add((rootIndex + MINOR_THIRD) % NUM_KEYS);
-			chordNotes.add((rootIndex + PERFECT_FIFTH) % NUM_KEYS);
-			chordNotes.add((rootIndex + MAJOR_SEVENTH) % NUM_KEYS);
 			break;
 		case "dim":
 			chordNotes.add((rootIndex + MINOR_THIRD) % NUM_KEYS);
@@ -4567,6 +6399,22 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 					break;
 				}
 				break;
+			case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
+				switch(addedNote) {
+				case "4":
+					chordNotes.add((rootIndex + PERFECT_FOURTH) % NUM_KEYS);
+					break;
+				case "6":
+					chordNotes.add((rootIndex + MAJOR_SIXTH) % NUM_KEYS);
+					break;
+				case "7":
+					chordNotes.add((rootIndex + MINOR_SEVENTH) % NUM_KEYS);
+					chordNotes.add((rootIndex + DIM_SEVENTH) % NUM_KEYS);
+					break;
+				default:
+					break;
+				}
+				break;
 			case ADDED_NOTES:
 				switch(addedNote) {
 				case "4":
@@ -4587,14 +6435,22 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			}
 			
 			break;
-		case "hdim":
-			chordNotes.add((rootIndex + MINOR_THIRD) % NUM_KEYS);
+		case "maj(*3)":
+			chordNotes.add((rootIndex + PERFECT_FIFTH) % NUM_KEYS);
 			chordNotes.add((rootIndex + DIM_FIFTH) % NUM_KEYS);
-			chordNotes.add((rootIndex + MINOR_SEVENTH) % NUM_KEYS);
 			break;
-		case "aug":
-			chordNotes.add((rootIndex + MAJOR_THIRD) % NUM_KEYS);
-			chordNotes.add((rootIndex + AUG_FIFTH) % NUM_KEYS);
+		case "sus2":
+			chordNotes.add((rootIndex + MAJOR_SECOND) % NUM_KEYS);
+			chordNotes.add((rootIndex + PERFECT_FIFTH) % NUM_KEYS);
+			break;
+		case "sus4":
+			chordNotes.add((rootIndex + PERFECT_FOURTH) % NUM_KEYS);
+			chordNotes.add((rootIndex + PERFECT_FIFTH) % NUM_KEYS);
+			break;
+		case "7sus4":
+			chordNotes.add((rootIndex + PERFECT_FOURTH) % NUM_KEYS);
+			chordNotes.add((rootIndex + PERFECT_FIFTH) % NUM_KEYS);
+			chordNotes.add((rootIndex + MINOR_SEVENTH) % NUM_KEYS);
 			break;
 		case "it":
 			chordNotes.add((rootIndex + MAJOR_THIRD) % NUM_KEYS);
@@ -4943,6 +6799,45 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		}	
 	}
 	
+	private static boolean isSusOrPowChord(String parentLabel) {
+		String pattern = "(7sus4|sus4|sus2|maj\\(\\*3\\))";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(parentLabel);
+		
+		if(m.find()) {
+			return true;
+		}
+		else {
+			return false;
+		}		
+	}
+	
+	private static boolean isSusChord(String parentLabel) {
+		String pattern = "sus";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(parentLabel);
+		
+		if(m.find()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	private static boolean isPowChord(String parentLabel) {
+		String pattern = "maj\\(\\*3\\)";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(parentLabel);
+		
+		if (m.find()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	private static int countParentNotes(List<Note> segmentNotes, String parentLabel, List<Integer> parentNotes) {
 		int numParentNotesInSegment = 0;
 		
@@ -4973,25 +6868,26 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				case ACCENT:
 					if(!note.fromPrevious) {
 						featuresWeightValue = note.accent;
-//							System.out.println("(Parent) Note: " + note.pitch + " Accent: " + note.accent);
+//						System.out.println("(Parent) Note: " + note.pitch + " Accent: " + note.accent);
 					}
 					else {
 						featuresWeightValue = 0.0;
+//						System.out.println("(Segment) Note: " + note.pitch + " Accent: " + featuresWeightValue);
 					}
 					break;
 				case DURATION:
 					if(note.fromPrevious) {
-//							System.out.println("(fromPrevious) Note: " + note.pitch + " Duration: " + (note.duration - (events.get(0).onset - note.onset)) + " Event onset: " + events.get(0).onset + " Note onset: " + note.onset);
+//						System.out.println("(fromPrevious) Note: " + note.pitch + " Duration: " + (note.duration - (events.get(0).onset - note.onset)) + " Event onset: " + events.get(0).onset + " Note onset: " + note.onset);
 						featuresWeightValue = note.duration - (events.get(0).onset - note.onset);
 					}
 					else {
 						featuresWeightValue = note.duration;
 					}
-//						System.out.println("(Parent) Note: " + note.pitch + " Duration: " + note.duration);
+//					System.out.println("(Parent) Note: " + note.pitch + " Duration: " + note.duration);
 					break;
 				case NONE:
 					featuresWeightValue = 1.0;
-//						System.out.println(noteWithoutOctaveNum);
+//					System.out.println("(Parent) Note: " + noteWithoutOctaveNum);
 					break;
 				default:
 					featuresWeightValue = 1.0;
@@ -5017,6 +6913,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				}
 				else {
 					featuresWeightValue = 0.0;
+//					System.out.println("(Segment) Note: " + note.pitch + " Accent: " + featuresWeightValue);
 				}
 				break;
 			case DURATION:
@@ -5032,7 +6929,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				break;
 			case NONE:
 				featuresWeightValue = 1.0;
-//				System.out.println(note.pitch);
+//				System.out.println("(Segment) Note: " + note.pitch);
 				break;
 			default:
 				featuresWeightValue = 1.0;
@@ -5110,11 +7007,12 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		}
 	}
 	
-	private static boolean coverage(int interval, String addedNote, List<Integer> parentNotes, List<Note> segmentNotes, String parentLabel, boolean is_fr_or_ger_chord) {
+	private static boolean coverage(int interval, String addedNote, List<Integer> parentNotes, List<Note> segmentNotes, String parentLabel, boolean is_reg_chord, boolean is_pow_chord, boolean is_7sus4_chord) {
+		int FIFTH_INTERVAL = 2;
 		int ADDED_NOTE_INTERVAL = 3;
 		int NUM_NOTES_IN_ADDED_NOTE_CHORD = 4;
 		// check if this is an added note chord
-		if(!is_fr_or_ger_chord && (interval == ADDED_NOTE_INTERVAL) && (parentNotes.size() < NUM_NOTES_IN_ADDED_NOTE_CHORD)) {
+		if(is_reg_chord && (interval == ADDED_NOTE_INTERVAL) && (parentNotes.size() < NUM_NOTES_IN_ADDED_NOTE_CHORD)) {
 //			System.out.println("Not an added note chord");
 			return false;
 		}
@@ -5126,11 +7024,11 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			switch(CRMain.simplification) {
 			case GENERIC_ADDED_NOTES:
 				if(interval == ADDED_NOTE_INTERVAL) { 
-					if((parentNotes.size() > NUM_NOTES_IN_ADDED_NOTE_CHORD) && ((noteIndex.equals(parentNotes.get(interval)) || (noteIndex.equals(parentNotes.get(interval + 1)))))) {
+					if((parentNotes.size() > NUM_NOTES_IN_ADDED_NOTE_CHORD) && (noteIndex.equals(parentNotes.get(interval)) || (noteIndex.equals(parentNotes.get(interval + 1))))) {
 //						System.out.println("ADDED NOTE Interval covered: " + interval + " Note: " + note.pitch);
 						return true;
 					}
-					else if (noteIndex.equals(parentNotes.get(interval))) {
+					else if(noteIndex.equals(parentNotes.get(interval))) {
 //						 System.out.println("ADDED NOTE Interval covered: " + interval + " Note: " + note.pitch);
 						return true;
 					}
@@ -5140,6 +7038,29 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 					return true;
 				}
 				break;
+			case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
+				if(is_pow_chord && (interval == FIFTH_INTERVAL) && (noteIndex.equals(parentNotes.get(interval)) || (noteIndex.equals(parentNotes.get(interval - 1))))) {
+//					System.out.println("(Power chord) Interval covered: " + interval + " Note: " + note.pitch);
+					return true;
+				}
+				else if((interval != ADDED_NOTE_INTERVAL) && noteIndex.equals(parentNotes.get(interval))) {
+//					System.out.println("Interval covered: " + interval + " Note: " + note.pitch);
+					return true;
+				}
+				else if(is_7sus4_chord && noteIndex.equals(parentNotes.get(interval))) {
+//					System.out.println("Interval covered: " + interval + " Note: " + note.pitch);
+					return true;
+				}
+				else if(interval == ADDED_NOTE_INTERVAL) {
+					if((parentNotes.size() > NUM_NOTES_IN_ADDED_NOTE_CHORD) && (noteIndex.equals(parentNotes.get(interval)) || (noteIndex.equals(parentNotes.get(interval + 1))))) {
+//						System.out.println("ADDED NOTE Interval covered: " + interval + " Note: " + note.pitch);
+						return true;
+					}
+					else if(noteIndex.equals(parentNotes.get(interval))) {
+//						 System.out.println("ADDED NOTE Interval covered: " + interval + " Note: " + note.pitch);
+						return true;
+					}
+				}
 			case ADDED_NOTES:
 			case MODES:
 				if(noteWithoutOctaveNum.equals(parentNotes.get(interval))) {
@@ -5167,12 +7088,13 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			Integer noteIndex = enharmonicNotesToID.get(noteWithoutOctaveNum);
 			switch(CRMain.simplification) {
 			case GENERIC_ADDED_NOTES:
+			case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
 				if((parentNotes.size() > NUM_NOTES_IN_ADDED_NOTE_CHORD) && ((noteIndex.equals(parentNotes.get(addedNoteIndex)) || (noteIndex.equals(parentNotes.get(addedNoteIndex + 1)))))) {
 //					System.out.println("(Added Note) Note: " + note.pitch + " Duration: " + note.duration);
 					addedNoteDuration += note.duration;
 				}
-				else if (noteIndex.equals(parentNotes.get(addedNoteIndex))) {
-//					System.out.println("(Added Note) Note: " + note.pitch + " Duration: " + note.duration); 
+				else if(noteIndex.equals(parentNotes.get(addedNoteIndex))) {
+//					System.out.println("(Added/7sus4 Note) Note: " + note.pitch + " Duration: " + note.duration); 
 					addedNoteDuration += note.duration;
 				}
 				else if(noteIndex.equals(parentNotes.get(rootIndex))) {
@@ -5182,7 +7104,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				break;
 			case ADDED_NOTES:
 			case MODES:
-				if (noteIndex.equals(parentNotes.get(addedNoteIndex))) {
+				if(noteIndex.equals(parentNotes.get(addedNoteIndex))) {
 //					System.out.println("ADDED NOTE Interval covered: " + interval + " Note: " + note.pitch);
 					addedNoteDuration += note.duration;
 				}
@@ -5202,7 +7124,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		return (addedNoteDuration > rootDuration); 
 	}
 	
-	private static int weighted_coverage(Weight featuresWeight, String addedNote, List<Integer> parentNotes, int interval, List<Note> segmentNotes, List<Event> events, String parentLabel, boolean overlappedConsistency, boolean is_fr_or_ger_chord) {
+	private static int weighted_coverage(Weight featuresWeight, String addedNote, List<Integer> parentNotes, int interval, List<Note> segmentNotes, List<Event> events, String parentLabel, boolean overlappedConsistency, boolean is_reg_chord, boolean is_pow_chord, boolean is_7sus4_chord) {
 		double numNotesInSegment = countSegmentNotes(featuresWeight, segmentNotes, events);
 		int numParentNotesInSegment = 0;
 		int NUM_NOTES_IN_ADDED_NOTE_CHORD = 4;
@@ -5210,13 +7132,14 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		boolean all = false;
 		double weighted_interval = 0.0;
 		int ADDED_NOTE_INTERVAL = 3;
+		int FIFTH_INTERVAL = 2;
 		double[] bins = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
 		double[] overlappedBins = {0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1};
 		
 //		System.out.println("--------------------");
 		
 		// check if this is an added note chord
-		if(!is_fr_or_ger_chord && (interval == ADDED_NOTE_INTERVAL) && (addedNote.isEmpty())) {
+		if(is_reg_chord && (interval == ADDED_NOTE_INTERVAL) && (addedNote.isEmpty())) {
 //			System.out.println("Not an added note chord");
 			return 0;
 		}
@@ -5225,8 +7148,84 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			String noteWithoutOctaveNum = getNoteWithoutOctaveNum(note);
 			Integer noteIndex = enharmonicNotesToID.get(noteWithoutOctaveNum);
 			switch(CRMain.simplification) {
-			case GENERIC_ADDED_NOTES:			
-				if(interval == ADDED_NOTE_INTERVAL) { 
+			case GENERIC_ADDED_NOTES:
+			case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
+				if(is_pow_chord && (interval == FIFTH_INTERVAL) && (noteIndex.equals(parentNotes.get(interval)) || (noteIndex.equals(parentNotes.get(interval - 1))))) {
+//					System.out.println("Interval covered: " + interval + " Note: " + note.pitch);
+					switch(featuresWeight) {
+					case ACCENT:
+						if(!note.fromPrevious) {
+//							System.out.println("Note: " + note.pitch + " Accent: " + note.accent);
+							weighted_interval += note.accent;
+						}
+						break;
+					case DURATION:
+						if(note.fromPrevious) {
+//							System.out.println("(fromPrevious) Note: " + note.pitch + " Duration: " + (note.duration - (events.get(0).onset - note.onset)) + " Event onset: " + events.get(0).onset + " Note onset: " + note.onset);
+							weighted_interval += note.duration - (events.get(0).onset - note.onset);
+						}
+						else {
+//							System.out.println("Note: " + note.pitch + " Duration: " + note.duration);
+							weighted_interval += note.duration;
+						}
+						break;
+					default:
+						weighted_interval += 1.0;
+					}
+					numParentNotesInSegment += 1;
+					break;
+				}
+				else if((interval != ADDED_NOTE_INTERVAL) && noteIndex.equals(parentNotes.get(interval))) {
+//					System.out.println("Interval covered: " + interval + " Note: " + note.pitch);
+					switch(featuresWeight) {
+					case ACCENT:
+						if(!note.fromPrevious) {
+//							System.out.println("Note: " + note.pitch + " Accent: " + note.accent);
+							weighted_interval += note.accent;
+						}
+						break;
+					case DURATION:
+						if(note.fromPrevious) {
+//							System.out.println("(fromPrevious) Note: " + note.pitch + " Duration: " + (note.duration - (events.get(0).onset - note.onset)) + " Event onset: " + events.get(0).onset + " Note onset: " + note.onset);
+							weighted_interval += note.duration - (events.get(0).onset - note.onset);
+						}
+						else {
+//							System.out.println("Note: " + note.pitch + " Duration: " + note.duration);
+							weighted_interval += note.duration;
+						}
+						break;
+					default:
+						weighted_interval += 1.0;
+					}
+					numParentNotesInSegment += 1;
+					break;
+				}
+				else if(is_7sus4_chord && noteIndex.equals(parentNotes.get(interval))) {
+//					System.out.println("Interval covered: " + interval + " Note: " + note.pitch);
+					switch(featuresWeight) {
+					case ACCENT:
+						if(!note.fromPrevious) {
+//							System.out.println("Note: " + note.pitch + " Accent: " + note.accent);
+							weighted_interval += note.accent;
+						}
+						break;
+					case DURATION:
+						if(note.fromPrevious) {
+//							System.out.println("(fromPrevious) Note: " + note.pitch + " Duration: " + (note.duration - (events.get(0).onset - note.onset)) + " Event onset: " + events.get(0).onset + " Note onset: " + note.onset);
+							weighted_interval += note.duration - (events.get(0).onset - note.onset);
+						}
+						else {
+//							System.out.println("Note: " + note.pitch + " Duration: " + note.duration);
+							weighted_interval += note.duration;
+						}
+						break;
+					default:
+						weighted_interval += 1.0;
+					}
+					numParentNotesInSegment += 1;
+					break;
+				}
+				else if(interval == ADDED_NOTE_INTERVAL) { 
 					if((parentNotes.size() > NUM_NOTES_IN_ADDED_NOTE_CHORD) && ((noteIndex.equals(parentNotes.get(interval)) || (noteIndex.equals(parentNotes.get(interval + 1)))))) {
 //						System.out.println("ADDED NOTE Interval covered: " + interval + " Note: " + note.pitch);
 						switch(featuresWeight) {
@@ -5277,31 +7276,6 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 						numParentNotesInSegment += 1;
 						break;
 					}
-				}
-				else if((interval != ADDED_NOTE_INTERVAL) && noteIndex.equals(parentNotes.get(interval))) {
-//					System.out.println("Interval covered: " + interval + " Note: " + note.pitch);
-					switch(featuresWeight) {
-					case ACCENT:
-						if(!note.fromPrevious) {
-//							System.out.println("Note: " + note.pitch + " Accent: " + note.accent);
-							weighted_interval += note.accent;
-						}
-						break;
-					case DURATION:
-						if(note.fromPrevious) {
-//							System.out.println("(fromPrevious) Note: " + note.pitch + " Duration: " + (note.duration - (events.get(0).onset - note.onset)) + " Event onset: " + events.get(0).onset + " Note onset: " + note.onset);
-							weighted_interval += note.duration - (events.get(0).onset - note.onset);
-						}
-						else {
-//							System.out.println("Note: " + note.pitch + " Duration: " + note.duration);
-							weighted_interval += note.duration;
-						}
-						break;
-					default:
-						weighted_interval += 1.0;
-					}
-					numParentNotesInSegment += 1;
-					break;
 				}
 				break;
 			case ADDED_NOTES:
@@ -5357,7 +7331,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		}
 	}	
 	
-	private static int segment_weighted_duration_coverage(Weight featuresWeight, String addedNote, List<Integer> parentNotes, int interval, List<Note> segmentNotes, List<Event> events, String parentLabel, boolean overlappedConsistency, boolean is_fr_or_ger_chord) {
+	private static int segment_weighted_duration_coverage(Weight featuresWeight, String addedNote, List<Integer> parentNotes, int interval, List<Note> segmentNotes, List<Event> events, String parentLabel, boolean overlappedConsistency, boolean is_reg_chord, boolean is_pow_chord, boolean is_7sus4_chord) {
 		double weighted_interval = 0.0;
 		double weighted_segment = 0.0;
 		int eventCounter = 0;
@@ -5368,7 +7342,8 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		double[] overlappedBins = {0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1};
 		
 		for(Event event : events) {	
-			if(coverage(interval, addedNote, parentNotes, event.notes, parentLabel, is_fr_or_ger_chord)) {
+			if(coverage(interval, addedNote, parentNotes, event.notes, parentLabel, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
+//				System.out.println("Event measure: " + event.measureNumber + " Duration: " + event.duration);
 				weighted_interval += event.duration;
 				intervalCounter++;
 			}
@@ -5464,12 +7439,13 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 	}
 	
 	
-	private static boolean bassIsInterval(int interval, String addedNote, List<Integer> parentNotes, Note bass, boolean is_fr_or_ger_chord) {
+	private static boolean bassIsInterval(int interval, String addedNote, List<Integer> parentNotes, Note bass, boolean is_reg_chord, boolean is_pow_chord, boolean is_7sus4_chord) {
 		int ADDED_NOTE_INTERVAL = 3;
+		int FIFTH_INTERVAL = 2;
 		int NUM_NOTES_IN_ADDED_NOTE_CHORD = 4;
 		
 		// check if this is an added note chord
-		if(!is_fr_or_ger_chord && (interval == ADDED_NOTE_INTERVAL) && (addedNote.isEmpty())) {
+		if(is_reg_chord && (interval == ADDED_NOTE_INTERVAL) && (addedNote.isEmpty())) {
 //			System.out.println("Not an added note chord");
 			return false;
 		}
@@ -5484,7 +7460,20 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		
 		switch(CRMain.simplification) {
 		case GENERIC_ADDED_NOTES:
-			if(interval == ADDED_NOTE_INTERVAL) {
+		case GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW:
+			if(is_pow_chord && (interval == FIFTH_INTERVAL) && (bassIndex.equals(parentNotes.get(interval)) || (bassIndex.equals(parentNotes.get(interval - 1))))) {
+//				System.out.println("Interval note: " + enharmonicIDToNotes.get(parentNotes.get(interval)) + " Bass note: " + bass.pitch + " (bassNote == interval)");
+				return true;
+			}
+			else if(interval != ADDED_NOTE_INTERVAL && bassIndex.equals(parentNotes.get(interval))){
+//				System.out.println("Interval note: " + enharmonicIDToNotes.get(parentNotes.get(interval)) + " Bass note: " + bass.pitch + " (bassNote == interval)");
+				return true;
+			}
+			else if(is_7sus4_chord && bassIndex.equals(parentNotes.get(interval))) {
+//				System.out.println("Interval note: " + enharmonicIDToNotes.get(parentNotes.get(interval)) + " Bass note: " + bass.pitch + " (bassNote == interval)");
+				return true;
+			}
+			else if(interval == ADDED_NOTE_INTERVAL) {
 				if((parentNotes.size() > NUM_NOTES_IN_ADDED_NOTE_CHORD) && ((bassIndex.equals(parentNotes.get(interval)) || (bassIndex.equals(parentNotes.get(interval + 1)))))) {
 //					System.out.println("Interval note: " + enharmonicIDToNotes.get(parentNotes.get(interval)) + " Bass note: " + bass.pitch + " (bassNote == interval)");
 					return true;
@@ -5493,10 +7482,6 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 //					System.out.println("Interval note: " + enharmonicIDToNotes.get(parentNotes.get(interval)) + " Bass note: " + bass.pitch + " (bassNote == interval)");
 					return true;
 				}
-			}
-			else if (interval != ADDED_NOTE_INTERVAL && bassIndex.equals(parentNotes.get(interval))){
-//				System.out.println("Interval note: " + enharmonicIDToNotes.get(parentNotes.get(interval)) + " Bass note: " + bass.pitch + " (bassNote == interval)");
-				return true;
 			}
 			break;
 		case ADDED_NOTES:
@@ -5510,7 +7495,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 		return false;
 	}
 	
-	private static int weightedBass(Weight featuresWeight, String addedNote, List<Integer> parentNotes, int interval, List<Event> eventsInside, List<Note> bassNotes, boolean overlappedConsistency, boolean is_fr_or_ger_chord) {
+	private static int weightedBass(Weight featuresWeight, String addedNote, List<Integer> parentNotes, int interval, List<Event> eventsInside, List<Note> bassNotes, boolean overlappedConsistency, boolean is_reg_chord, boolean is_pow_chord, boolean is_7sus4_chord) {
 		double intervalAsBassWeight = 0.0;
 		double segmentWeight = 0.0;
 		double[] bins = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
@@ -5524,7 +7509,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 			Event event = eventsInside.get(eventCounter);
 			switch(featuresWeight) {
 			case DURATION:
-				if(bassIsInterval(interval, addedNote, parentNotes, bass, is_fr_or_ger_chord)) {
+				if(bassIsInterval(interval, addedNote, parentNotes, bass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					intervalAsBassWeight += event.duration;
 					bassCounter++;
 //					System.out.println("Interval: " + interval + " Event duration: " + event.duration);
@@ -5532,7 +7517,7 @@ public class WordWeakSemiCRFFeatureManager extends FeatureManager {
 				segmentWeight += event.duration;
 				break;
 			case ACCENT:
-				if(bassIsInterval(interval, addedNote, parentNotes, bass, is_fr_or_ger_chord)) {
+				if(bassIsInterval(interval, addedNote, parentNotes, bass, is_reg_chord, is_pow_chord, is_7sus4_chord)) {
 					intervalAsBassWeight += event.accent;
 					bassCounter++;
 //					System.out.println("Interval: " + interval + " Event accent: " + event.accent);

@@ -41,6 +41,9 @@ public class CRMain {
 	public enum Simplify {
 		MODES,					// simplify chord labels to major/minor/diminished/augmented triads
 		GENERIC_ADDED_NOTES, 	// include added notes in chord labels (4ths, 6ths, 7ths) + aug6 chords
+		GENERIC_ADDED_NOTES_PLUS_SUS_AND_POW, // include maj/min/dim modes, plus added notes (4ths, 6ths,
+											  // 7ths), plus sus2, sus4, maj(*3) (power chords), and 7sus4
+											  // (mostly in place for Rock dataset)
 		ADDED_NOTES,			// include added notes in chord labels (4ths, 6ths, 7ths) + additional
 								// modes for 7ths (dom [i.e. 7], min-maj, hdim)
 		NONE					// include everything in chord label (modes, added notes, inversions, 
@@ -77,15 +80,15 @@ public class CRMain {
 		String logPath = null;
 		Song[] trainInstances = null;			// training data instances
 		Song[] testInstances = null;			// testing data instances
-		boolean findMaxSegmentLength = false;	// find maximum segment length?
+		boolean findMaxSegmentLength = true;	// find maximum segment length?
 		boolean writeModelText = false;
 		boolean countFeatures = false;
 		boolean normalizeEnharmonics = false;
 		boolean useAllChords = false;
 		boolean serializeModel = true;
-		int maxLength = 207;					// maximum song length
-		int maxSegmentLength = 17;				// maximum segment length
-		int numExamplesPrinted = 10;
+		int maxLength = 955;					// maximum song length
+		int maxSegmentLength = 20;				// maximum segment length
+		int numExamplesPrinted = 20;
 		int totalNumEvents = 0;
 		int totalNumSegments = 0;
 		int foldNum = 0;
@@ -163,6 +166,10 @@ public class CRMain {
 						break;
 					case "nThreads":
 						NetworkConfig._numThreads = Integer.parseInt(args[argIndex+1]);
+						argIndex += 2;
+						break;
+					case "modelFile":
+						modelFile = args[argIndex + 1];
 						argIndex += 2;
 						break;
 					case "l2":

@@ -32,7 +32,7 @@ public class Span implements Comparable<Span>, Serializable{
 	public static Span parseXML(Element element, Simplify simplification, boolean normalizeEnharmonics) throws IOException {
 		Span span = new Span();
 		
-		span.label = SpanLabel.get(normalizeEnharmonicChords(simplifyLabel(element.getFirstChildElement("chordLabel").getValue(), simplification), normalizeEnharmonics));	
+		span.label = SpanLabel.get(normalizeEnharmonicChords(simplifyLabel(element.getFirstChildElement("chordLabel").getValue().trim(), simplification), normalizeEnharmonics));	
 		span.onset = Double.parseDouble(element.getFirstChildElement("onset").getValue());
 		span.offset = Double.parseDouble(element.getFirstChildElement("offset").getValue());
 		span.start = Integer.parseInt(element.getFirstChildElement("eventStart").getValue());
