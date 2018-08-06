@@ -1,7 +1,7 @@
 # ChordRecognition
 #### Kristen Masada and Razvan Bunescu
 
-This repository contains code to run our semi-CRF system on the BaCh dataset using Radicioni and Esposito's original 10 folds.
+This repository contains code for our semi-CRF system detailed in ["Chord Recognition in Symbolic Music using semi-Markov Conditional Random Fields"](https://kristenmasada.github.io/publications/ismir17/ismir17.pdf). The code here can be used to run semi-CRF on the BaCh dataset using [Radicioni and Esposito](https://pdfs.semanticscholar.org/3fe9/2031e8093b00b4b39ed0fc2bdb323b8dffb6.pdf)'s original 10 folds.
 
 # Instructions:
 1. Generate fold files for your machine: `rm folds/*`, `cd fold_gen`, then `python3 fold_gen.py <path to ChordRecognition directory>` (for example, `python3 fold_gen.py /home/km942412/ChordRecognition/`).
