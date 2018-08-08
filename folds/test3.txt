@@ -1,6 +1,6 @@
-/home/km942412/ChordRecognition/bach/003006b_annotated_events.xml
-/home/km942412/ChordRecognition/bach/015305b_annotated_events.xml
-/home/km942412/ChordRecognition/bach/002908channotated_events.xml
-/home/km942412/ChordRecognition/bach/014505b_annotated_events.xml
-/home/km942412/ChordRecognition/bach/003806b_annotated_events.xml
-/home/km942412/ChordRecognition/bach/000907b_annotated_events.xml
+/home/razvan/bunescu/ChordRecognition/bach/003006b_annotated_events.xml
+/home/razvan/bunescu/ChordRecognition/bach/015305b_annotated_events.xml
+/home/razvan/bunescu/ChordRecognition/bach/002908channotated_events.xml
+/home/razvan/bunescu/ChordRecognition/bach/014505b_annotated_events.xml
+/home/razvan/bunescu/ChordRecognition/bach/003806b_annotated_events.xml
+/home/razvan/bunescu/ChordRecognition/bach/000907b_annotated_events.xml
